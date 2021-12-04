@@ -1,4 +1,5 @@
 const { Model, DataTypes } = require('sequelize');
+const { Project } = require('.');
 
 const sequelize = require('../config/connection');
 
@@ -19,6 +20,13 @@ ProjectAsks.init(
     description: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'project',
+        key: 'id'
+      }
     }
   },
   {
