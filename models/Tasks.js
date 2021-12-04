@@ -23,6 +23,13 @@ Tasks.init(
     stage: {
       type: DataTypes.INTEGER,
       allowNull: false
+    },
+    project_id: {
+      type: DataTypes.INTEGER,
+      refereces: {
+        model: 'project',
+        key: 'id'
+      }
     }
   },
   {
