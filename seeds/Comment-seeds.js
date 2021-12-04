@@ -1,4 +1,5 @@
 const { Comment, Project } = require('../models');
+// Created seeds for comments
 
 const commentData = [
     {
