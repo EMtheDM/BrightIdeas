@@ -4,7 +4,7 @@ const User = require('../../models/Project');
 // GET a project
 router.get('/:id', async (req, res) => {
   try {
-    const userData = await User.findByPk(req.params.id);
+    const userData = await Project.findByPk(req.params.id);
     if (!userData) {
       res.status(404).json({ message: 'No project with this id!' });
       return;
@@ -15,10 +15,10 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// UPDATE a user
+// UPDATE a project 
 router.put('/:id', async (req, res) => {
   try {
-    const userData = await User.update(req.body, {
+    const userData = await Project.update(req.body, {
       where: {
         id: req.params.id,
       },
@@ -36,7 +36,7 @@ router.put('/:id', async (req, res) => {
 // DELETE a project
 router.delete('/:id', async (req, res) => {
   try {
-    const userData = await User.destroy({
+    const userData = await Project.destroy({
       where: {
         id: req.params.id,
       },
