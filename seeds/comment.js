@@ -3,19 +3,19 @@ const { Comment, Project } = require('../models');
 
 const commentData = [
     {
-        comment: 'Project Started',
+        comment: 'First Proeject Started',
         project_id: '1',
     },
     {
-        comment: 'Project in Progress',
+        comment: 'Project is in Progress',
         project_id: '1',
     },
     {
-        comment: 'Making Notes on Project',
+        comment: 'Making Notes on Status of Project',
         project_id: '1',
     },
     {
-        comment: 'Commenting on Project Changes',
+        comment: 'Commenting on Notes',
         project_id: '2',
     },
     {
