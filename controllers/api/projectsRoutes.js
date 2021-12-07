@@ -1,8 +1,22 @@
 const router = require('express').Router();
 const User = require('../../models/Project');
 
+// RESTful -> routes represent operations around an entity / resource
+// In this our case, the resource is "projects"
+// - create
+// - list (index)
+// - update 
+// - delete
+
+// TODO: GET route that shows all projects
+router.get("/projects", async (req, res) => {
+
+})
+
+// TODO: POST route to create a project
+
 // GET a project
-router.get('/:id', async (req, res) => {
+router.get('/projects/:id', async (req, res) => {
   try {
     const userData = await Project.findByPk(req.params.id);
     if (!userData) {
@@ -16,7 +30,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // UPDATE a project 
-router.put('/:id', async (req, res) => {
+router.put('/projects/:id', async (req, res) => {
   try {
     const userData = await Project.update(req.body, {
       where: {
@@ -33,8 +47,14 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+// In real world, the best practice is not NEVER delete your data (aka always keep a history)
+// you can still define your DELETE route on a project
+// but instead of doing Project.destroy (which will literally delete that row from your db)
+// you can something like update an attribute on the model, e.g. project.deleted = true; or project.deleted_at = <timestamp>; or project.inactive = true
+// then, for your LIST route (GET all), you filter out only the active projects, e.g. SELECT * FROM projects where DELETED is null
+
 // DELETE a project
-router.delete('/:id', async (req, res) => {
+router.delete('/projects/:id', async (req, res) => {
   try {
     const userData = await Project.destroy({
       where: {

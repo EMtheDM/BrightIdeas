@@ -7,7 +7,7 @@ const projectData = [
         date_created: 2021-12-05,
         client_name: "Brad Johnson",
         client_email: "bjohnson@gmail.com",
-        client_phone: 4795551234,
+        client_phone: "4795551234",
     },
     {
         name: 'Commercial Website',
@@ -15,7 +15,7 @@ const projectData = [
         date_created: 2021-10-03,
         client_name: 'Jack Bellamy',
         client_email: "jbellamy@gmail.com",
-        client_phone: 4799876543, 
+        client_phone: "4799876543", 
     },
     {
         name: 'New API',
@@ -23,7 +23,7 @@ const projectData = [
         date_created: 2021-08-03,
         client_name: "Trevor McCoy",
         client_email: "tmccoy@gmail.com",
-        client_phone: 4793759856, 
+        client_phone: "4793759856", 
     },
     {
         name: 'Dog Tracker',
@@ -39,7 +39,7 @@ const projectData = [
         date_created: 2021-08-28,
         client_name: "Victor Stein",
         client_email: "vstein@gmail.com",
-        client_phone: 4795559674, 
+        client_phone: "4795559674", 
     },
 ];
 

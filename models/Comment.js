@@ -16,16 +16,6 @@ Comment.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        firstName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
-        lastName: {
-            type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
-        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
@@ -33,12 +23,12 @@ Comment.init(
                 key: 'id',
             },
         },
-        post_id: {
+        project_id: {
             type: DataTypes.INTEGER,
             references: {
-                model: 'post',
+                model: 'project',
                 key: 'id',
-            },
+            }
         }
     },
     {
