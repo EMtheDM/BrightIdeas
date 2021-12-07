@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const Project = require('../../models/Project');
 const User = require('../../models/Project');
 
 // RESTful -> routes represent operations around an entity / resource
@@ -11,40 +10,11 @@ const User = require('../../models/Project');
 
 // TODO: GET route that shows all projects
 router.get("/projects", async (req, res) => {
-  try {
-    const projectData = await Project.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ['firstName'],
-        },
-      ],
-    });
-
-    const projects = projectData.map((project) => project.get({ plain: true }));
   
-    res.render('homepage', {
-      projects,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 })
 
 // TODO: POST route to create a project
-router.post('/', withAuth, async (req, res) => {
-  try {
-    const newProject = await Project.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
 
-    res.status(200).json(newProject);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-})
 
 // GET a project
 router.get('/projects/:id', async (req, res) => {
