@@ -20,6 +20,10 @@ Tasks.init(
       type: DataTypes.STRING,
       allowNull: false
     },
+    task_content: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
     stage: {
       type: DataTypes.INTEGER,
       allowNull: false
