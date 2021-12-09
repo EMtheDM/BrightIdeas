@@ -33,7 +33,7 @@ router.post('/', withAuth, async => (req, res) => {
 });
 
 // UPDATE a project ask
-router.put('/projects/:id', async (req, res) => {
+router.put('/ProjectAsks/:id', async (req, res) => {
   try {
     const userData = await ProjectAsks.update(req.body, {
       where: {
