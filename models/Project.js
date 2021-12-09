@@ -34,7 +34,7 @@ Project.init(
             }
         },
         client_phone: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             allowNull: false
         }
     },

@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS schema_db;
+DROP DATABASE IF EXISTS brightideas_db;
 
-CREATE DATABASE schema_db;
+CREATE DATABASE brightideas_db;
 
-USE schema_db;
+USE brightideas_db;

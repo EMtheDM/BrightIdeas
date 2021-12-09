@@ -10,11 +10,6 @@ const User = require('../../models/Project');
 
 // TODO: GET route that shows all projects
 router.get("/projects", async (req, res) => {
-  
-})
-
-// TODO: POST route to create a project
-
 
 // GET a project
 router.get('/projects/:id', async (req, res) => {
