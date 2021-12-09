@@ -1,0 +1,28 @@
+:root {
+    --lightgray: #eae7e2;
+    --lightteal: #d7e2e8;
+    --lightblue: #b9cbd9;
+    --lightred: #fcc9c5;
+    --lightpink: #feddd8;
+    --lightgreen: #cfe3e2;
+}
+
+body {
+    background-color: var(--lightgreen)
+}
+
+h1 {
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 5rem;
+    text-align: center;
+}
+
+h3 {
+    text-align: center;
+    font-family: 'Fuzzy Bubbles', cursive;
+    font-size: 3rem;
+}
+
+.login-link {
+    text-align: end;
+}
