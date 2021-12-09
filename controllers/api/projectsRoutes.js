@@ -8,8 +8,14 @@ const User = require('../../models/Project');
 // - update 
 // - delete
 
-// TODO: GET route that shows all projects
-router.get("/projects", async (req, res) => {
+// // TODO: GET route that shows all projects
+// router.get("/projects", async (req, res) => {
+//   try {
+
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 // GET a project
 router.get('/projects/:id', async (req, res) => {
