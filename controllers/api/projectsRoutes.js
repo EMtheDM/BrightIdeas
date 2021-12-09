@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const User = require('../../models/Project');
+const { Project } = require('../../models');
+const withAuth = require('../../utils/auths');
 
 // RESTful -> routes represent operations around an entity / resource
 // In this our case, the resource is "projects"
@@ -32,7 +33,7 @@ router.get('/projects/:id', async (req, res) => {
 });
 
 // UPDATE a project 
-router.put('/projects/:id', async (req, res) => {
+router.put('/projects/:id', withAuth, async (req, res) => {
   try {
     const userData = await Project.update(req.body, {
       where: {
@@ -56,7 +57,7 @@ router.put('/projects/:id', async (req, res) => {
 // then, for your LIST route (GET all), you filter out only the active projects, e.g. SELECT * FROM projects where DELETED is null
 
 // DELETE a project
-router.delete('/projects/:id', async (req, res) => {
+router.delete('/projects/:id', withAuth, async (req, res) => {
   try {
     const userData = await Project.destroy({
       where: {
