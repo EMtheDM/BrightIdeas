@@ -1,15 +1,15 @@
 const router = require('express').Router();
 const userRoutes = require('./userRoutes');
-// const listRoutes = require('./listRoutes');
+const projectRoutes = require('./projectsRoutes');
+const projectAskRoutes = require('./projectAsks');
 const taskRoutes = require('./taskRoutes');
-// const commentRoutes = require('./commentRoutes');
+const commentRoutes = require('./commentRoutes');
 
 
 router.use('/users', userRoutes);
 router.use('/projects', projectRoutes);
-router.use('/projectAsks', projectAsksRoutes);
-// router.use('/projectLists', listRoutes);
+router.use('/projectAsks', projectAskRoutes);
 router.use('/tasks', taskRoutes);
-// router.use('/comments', commentRoutes);
+router.use('/comments', commentRoutes);
 
 module.exports = router;
