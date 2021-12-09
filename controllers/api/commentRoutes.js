@@ -19,8 +19,8 @@ router.get('/Comment/:id', async (req, res) => {
 
 // POST route to create a comment route to the comments column
 
-router.post('/', withAuth, async => (req, res) => {
-    try{
+router.post('/', withAuth, async (req, res) => {
+    try {
         const newComment = await Comment.create({
           ...req.body, 
           project_id: req.session.comment_id,  
@@ -28,8 +28,9 @@ router.post('/', withAuth, async => (req, res) => {
 
         res.status(200).json(newComment);
     }
-    catch {
-    }  
+    catch (err) {
+      res.status(500).json(err);
+    } 
 });
 
 // UPDATE a project ask

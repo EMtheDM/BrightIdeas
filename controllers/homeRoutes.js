@@ -13,12 +13,12 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
+    console.log('session', req.session);
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
-
+    console.log('projects', projects);
     // Pass serialized data and session flag into template
-    res.render('projectlist', {
+    res.render('profile', {
       projects, 
       logged_in: req.session.logged_in 
     });
@@ -33,7 +33,7 @@ router.get('/project/:id', async (req, res) => {
       include: [
         {
           model: User,
-          attributes: ['firstName', 'lastName'],
+          attributes: ['name'],
         },
       ],
     });
@@ -49,71 +49,6 @@ router.get('/project/:id', async (req, res) => {
   }
 });
 
-// router.get('/comment/:id', async (req, res) => {
-//     try {
-//       const commentData = await Comment.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: User,
-//             attributes: ['firstName', 'lastName'],
-//           },
-//         ],
-//       });
-  
-//       const comment = commentData.get({ plain: true });
-  
-//       res.render('comment', {
-//         ...comment,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-
-//   router.get('/tasks/:id', async (req, res) => {
-//     try {
-//       const taskData = await Tasks.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: User,
-//             attributes: ['firstName', 'lastName'],
-//           },
-//         ],
-//       });
-  
-//       const tasks = taskData.get({ plain: true });
-  
-//       res.render('tasks', {
-//         ...tasks,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
-
-//   router.get('/asks/:id', async (req, res) => {
-//     try {
-//       const projectAskData = await ProjectAsks.findByPk(req.params.id, {
-//         include: [
-//           {
-//             model: User,
-//             attributes: ['firstName', 'lastName'],
-//           },
-//         ],
-//       });
-  
-//       const projectAsks = projectAskData.get({ plain: true });
-  
-//       res.render('project_asks', {
-//         ...projectAsks,
-//         logged_in: req.session.logged_in
-//       });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   });
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
