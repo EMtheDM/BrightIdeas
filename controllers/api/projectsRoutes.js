@@ -1,5 +1,6 @@
 const router = require('express').Router();
-const User = require('../../models/Project');
+const { Project } = require('../../models');
+const withAuth = require('../../utils/auths');
 
 // RESTful -> routes represent operations around an entity / resource
 // In this our case, the resource is "projects"
@@ -32,7 +33,7 @@ router.get('/projects/:id', async (req, res) => {
 });
 
 // UPDATE a project 
-router.put('/projects/:id', async (req, res) => {
+router.put('/projects/:id', withAuth, async (req, res) => {
   try {
     const userData = await Project.update(req.body, {
       where: {
