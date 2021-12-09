@@ -22,7 +22,7 @@ Tasks.init(
     },
     task_content: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
     },
     stage: {
       type: DataTypes.INTEGER,
