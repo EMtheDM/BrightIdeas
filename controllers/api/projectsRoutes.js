@@ -57,7 +57,7 @@ router.put('/projects/:id', withAuth, async (req, res) => {
 // then, for your LIST route (GET all), you filter out only the active projects, e.g. SELECT * FROM projects where DELETED is null
 
 // DELETE a project
-router.delete('/projects/:id', async (req, res) => {
+router.delete('/projects/:id', withAuth, async (req, res) => {
   try {
     const userData = await Project.destroy({
       where: {
