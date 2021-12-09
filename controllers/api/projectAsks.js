@@ -19,17 +19,17 @@ router.get('/ProjectAsks/:id', async (req, res) => {
 
 // POST route to create a projectAsks route to the tasks column
 
-router.post('/', withAuth, async => (req, res) => {
-    try{
-        const newAsk = await ProjectAsks.create({
-          ...req.body, 
-          project_id: req.session.project_id,  
-        });
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const newAsk = await ProjectAsks.create({
+      ...req.body,
+      project_id: req.session.project_id,
+    });
 
-        res.status(200).json(newAsk);
-    }
-    catch {
-    }  
+    res.status(200).json(newAsk);
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 // UPDATE a project ask
