@@ -13,10 +13,8 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-    console.log('session', req.session);
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
-    console.log('projects', projects);
     // Pass serialized data and session flag into template
     res.render('profile', {
       projects, 
@@ -79,5 +77,9 @@ router.get('/login', (req, res) => {
 
   res.render('login');
 });
+
+router.get('/signup', (req, res) => {
+  res.render('signup');
+})
 
 module.exports = router;
