@@ -1,3 +1,4 @@
+{{!-- Project Page Template --}}
 <div class="main-container">
     <div class="project-main">
         <div class="account-info">
@@ -9,23 +10,43 @@
             </div>
         </div>
 
+{{!-- Displays all current project asks --}}
+    {{#if projectAsks.length}}
         <div class="project-asks">
+            <h3>Project Asks:</h3>
+
+            {{#each projectAsks as |projectAsk|}}
+            {{!-- Not sure how to make sure I'm pulling from the right project. 
+            How to incorporate the project id? Project-ask-item container
+            is set up for Flex to be set in a row so you can delete asks with the 'X'
+            if the user wants to. --}}
+            <div class="project-ask-item">
+                <div class="project-ask-desc">
+                    <p>{{projectAsks.description}}</p>
+                </div>
+                <div class="project-ask-delete">
+                    <button class="project-ask-del-btn">X</button>
+                </div>
+            </div>
 
         </div>
 
-        <div class="tasks">
-            <div class="to-do">
+{{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
+        <div class="tasks kanban">
+            <div class="to-do-container">
 
             </div>
-            <div class="in-progress">
+            <div class="in-progress-container">
 
             </div>
-            <div class="done">
+            <div class="done-container">
 
             </div>
         </div>
 
     </div>
+
+    {{!-- Comment container on the right side (if we have time) --}}
     <div class="comment-main">
         <div class="comment-logout-main">
             <div class="comment-text-area">
