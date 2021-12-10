@@ -1,10 +1,13 @@
+// Requiring all Models to establish relationships below
 const User = require('./User');
 const Tasks = require('./Tasks');
 const Comment = require('./Comment');
 const ProjectAsks = require('./ProjectAsks');
 const Project = require('./Project');
 
-// user has many projects
+
+// Model Relationships
+
 User.hasMany(Project, {
     foreignKey: 'user_id',
     onDelete: 'CASCADE'
@@ -39,5 +42,5 @@ Project.hasMany(Tasks, {
 });
 
 
-
+// Exporting
 module.exports = { User, Tasks, Comment, ProjectAsks, Project };

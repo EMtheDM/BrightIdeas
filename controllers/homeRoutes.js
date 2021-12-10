@@ -1,4 +1,10 @@
 const router = require('express').Router();
+
+
+// Would we need to call all Models here since Comments, ProjectAsks, and Tasks all live within the project?
+// If we are calling the Project model with our GET requests, do we need to call the Models that live within them?
+// How does that work in regards to primary keys and foreign keys?
+
 const { Project, User, Comment, ProjectAsks, Tasks } = require('../models');
 const withAuth = require('../utils/auths');
 
@@ -25,6 +31,8 @@ router.get('/', async (req, res) => {
   }
 });
 
+
+// Router to find projects by ID
 router.get('/project/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id, {
@@ -67,6 +75,8 @@ router.get('/profile', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
+
+
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route

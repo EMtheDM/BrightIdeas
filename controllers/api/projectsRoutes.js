@@ -9,7 +9,7 @@ const withAuth = require('../../utils/auths');
 // - update 
 // - delete
 
-// // TODO: GET route that shows all projects
+// // TODO: GET route that shows all projects. Is that redundant here?
 // router.get("/projects", async (req, res) => {
 //   try {
 
@@ -18,21 +18,21 @@ const withAuth = require('../../utils/auths');
 //   }
 // });
 
-// GET a project
+// GET a project using its ID
 router.get('/projects/:id', async (req, res) => {
   try {
-    const userData = await Project.findByPk(req.params.id);
+    const projectData = await Project.findByPk(req.params.id);
     if (!userData) {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json(projectData);
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
-// UPDATE a project 
+// UPDATE a project using its ID
 router.put('/projects/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.update(req.body, {
@@ -56,7 +56,8 @@ router.put('/projects/:id', withAuth, async (req, res) => {
 // you can something like update an attribute on the model, e.g. project.deleted = true; or project.deleted_at = <timestamp>; or project.inactive = true
 // then, for your LIST route (GET all), you filter out only the active projects, e.g. SELECT * FROM projects where DELETED is null
 
-// DELETE a project
+
+// DELETE a project using ID
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.destroy({
@@ -74,4 +75,6 @@ router.delete('/:id', withAuth, async (req, res) => {
   }
 });
 
+
+// Exporting the router
 module.exports = router;
