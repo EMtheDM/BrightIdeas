@@ -35,16 +35,16 @@ router.get('/projects/:id', async (req, res) => {
 // UPDATE a project 
 router.put('/projects/:id', withAuth, async (req, res) => {
   try {
-    const userData = await Project.update(req.body, {
+    const projectData = await Project.update(req.body, {
       where: {
         id: req.params.id,
       },
     });
-    if (!userData[0]) {
+    if (!projectData[0]) {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json(projectData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -57,14 +57,14 @@ router.put('/projects/:id', withAuth, async (req, res) => {
 // then, for your LIST route (GET all), you filter out only the active projects, e.g. SELECT * FROM projects where DELETED is null
 
 // DELETE a project
-router.delete('/projects/:id', withAuth, async (req, res) => {
+router.delete('/:id', withAuth, async (req, res) => {
   try {
-    const userData = await Project.destroy({
+    const projectData = await Project.destroy({
       where: {
         id: req.params.id,
       },
     });
-    if (!userData) {
+    if (!projectData) {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
