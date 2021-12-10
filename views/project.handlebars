@@ -33,13 +33,56 @@
 
 {{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
         <div class="tasks kanban">
+
+            
             <div class="to-do-container">
+                {{#if tasks.length}}
+
+                {{#each tasks as |task|}}
+
+                {{!-- How do I tell the task which div to be in based
+                on its stage? (To Do, In Progress, and Done) --}}
+
+                <div class="project-task-item">
+                    <div class="project-task-desc">
+                        <p>{{tasks.task_content}}</p>
+                    </div>
+                    <div class="project-task-delete">
+                        <button class="project-task-del-btn">X</button>
+                    </div>
+                </div>
 
             </div>
             <div class="in-progress-container">
 
+                {{#if tasks.length}}
+
+                {{#each tasks as |task|}}
+
+                <div class="project-task-item">
+                    <div class="project-task-desc">
+                        <p>{{tasks.task_content}}</p>
+                    </div>
+                    <div class="project-task-delete">
+                        <button class="project-task-del-btn">X</button>
+                    </div>
+                </div>
+
             </div>
             <div class="done-container">
+
+                    {{#if tasks.length}}
+
+                    {{#each tasks as |task|}}
+
+                <div class="project-task-item">
+                    <div class="project-task-desc">
+                        <p>{{tasks.task_content}}</p>
+                    </div>
+                <div class="project-task-delete">
+                    <button class="project-task-del-btn">X</button>
+                </div>
+                </div>
 
             </div>
         </div>
@@ -69,6 +112,9 @@
         </div>
 
         <div class="comment-feed">
+                
+                {{#if comment.length}}
+
             <p>
                 {{project.comment}}
             </p>
