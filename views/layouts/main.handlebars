@@ -16,12 +16,15 @@
     <div>
         <header>
             <h1>BrightIdeas</h1>
+
+            {{!-- Conditional Navigation Options --}}
+            {{!-- If logged in, show logout option. If logged out, show login option. --}}
             <nav class="nav">
                 {{#if logged_in}}
-                <a href='/profile'>Profile</a>
-                <button class="btn" id="logout">logout</button>
+                    <a href='/profile'>Profile</a>
+                    <button class="btn" id="logout">logout</button>
                 {{else}}
-                <a class="login-link" href="/login">login</a>
+                    <a class="login-link" href="/login">login</a>
                 {{/if}}
             </nav>
         </header>
@@ -33,6 +36,7 @@
         </footer>
     </div>
 
+{{!-- Render script for logged in users only --}}
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}

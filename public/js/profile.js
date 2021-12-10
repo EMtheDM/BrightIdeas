@@ -1,3 +1,4 @@
+// New Project form handler
 const newFormHandler = async (event) => {
     event.preventDefault();
 
@@ -7,6 +8,7 @@ const newFormHandler = async (event) => {
     const clientPhone = document.querySelector('#client-phone').value.trim();
     const description = document.querySelector('#project-desc').value.trim();
 
+    // Project can be created as long as it has a name, clientName, and description
     if (name && clientName && description) {
         const response = await fetch(`/api/projects`, {
             method: 'POST',
@@ -16,6 +18,7 @@ const newFormHandler = async (event) => {
         },
     });
 
+    // If response is acceptable, replace the doc location with the profile?
     if (response.ok) {
         document.location.replace('/profile');
     } else {
@@ -24,7 +27,7 @@ const newFormHandler = async (event) => {
 }
 };
 
-
+// Delete project handler
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
@@ -41,10 +44,13 @@ const delButtonHandler = async (event) => {
     }
 };
 
-document
-    .querySelector('.project-list')
-    .addEventListener('click', delButtonHandler);
-
+// Event listener for New Project form handler
 document 
     .querySelector('.new-project-form')
     .addEventListener('submit', newFormHandler);
+
+
+// Event listener for Delete Project handler
+document
+    .querySelector('.project-list')
+    .addEventListener('click', delButtonHandler);

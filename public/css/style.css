@@ -31,5 +31,12 @@ h3 {
     text-align: center;
 }
 
-/* .login-section {
-} */
+.project-ask-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.kanban {
+    display: flex;
+    flex-direction: row;
+}
