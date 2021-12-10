@@ -18,7 +18,7 @@ Project.init(
         description: {
             type: DataTypes.STRING,
         },
-        date_created: {
+        date_created: {   // Do we need the date created property if timestamps is set to TRUE?
             type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW,
@@ -47,7 +47,7 @@ Project.init(
     },
     {
         sequelize,
-        timestamps: false,
+        timestamps: true,
         freezeTableName: true,
         underscored: true,
         modelName: 'project',

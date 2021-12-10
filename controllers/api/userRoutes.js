@@ -1,6 +1,8 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+
+// POST route to create a new user (right??)
 router.post('/', async (req, res) => {
     try {
         const userData = await User.create(req.body);
@@ -8,6 +10,8 @@ router.post('/', async (req, res) => {
         req.session.save(() => {
             req.session.user_id = userData.id;
             req.session.logged_in = true;
+
+            console.log(userData);
 
             res.status(200).json(userData);
         });
@@ -17,6 +21,7 @@ router.post('/', async (req, res) => {
 });
 
 
+// Router to login a user based on previously saved userData
 router.post('/login', async (req, res) => {
     try {
         const userData = await User.findOne({ where: { email: req.body.email } });
@@ -46,9 +51,11 @@ router.post('/login', async (req, res) => {
     }
 });
 
+
+// POST router to signup new user. (Do we need this?)
 router.post('/signup', async (req, res) => {
     try {
-        console.log('req.body', req.body);
+        console.log('req.body', req.body); //Seems to creating the user with name, email, and password
         const newUser = await User.create(req.body);
 
         req.session.save(() => {
@@ -62,6 +69,8 @@ router.post('/signup', async (req, res) => {
     }
 });
 
+
+// Router to logout a user
 router.post('/logout', (req, res) => {
     if (req.session.logged_in) {
         req.session.destroy(() => {
@@ -72,4 +81,6 @@ router.post('/logout', (req, res) => {
     }
 });
 
+
+// Exporting the router
 module.exports = router;

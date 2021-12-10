@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { Tasks } = require('../../models');
 const withAuth = require('../../utils/auths');
 
+// Router to create a Task
 router.post('/', withAuth, async (req, res) => {
     try {
         const newTask = await Tasks.create({
@@ -15,6 +16,8 @@ router.post('/', withAuth, async (req, res) => {
     }
 });
 
+
+// Router to edit a Task based on its ID
 router.put('/edit/:id', withAuth, async (req, res) => {
     if (!req.session.loggedIn) {
         res.redirect('/login');
@@ -40,6 +43,7 @@ router.put('/edit/:id', withAuth, async (req, res) => {
     }
 });
 
+// Router to delete a task based on its ID
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const taskData = await Tasks.destroy({
@@ -60,4 +64,6 @@ router.delete('/:id', withAuth, async (req, res) => {
     }
 });
 
+
+// Exporting the router
 module.exports = router;

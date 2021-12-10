@@ -1,4 +1,7 @@
+// Requiring the express router
 const router = require('express').Router();
+
+// Requring each api route
 const userRoutes = require('./userRoutes');
 const projectRoutes = require('./projectsRoutes');
 const projectAskRoutes = require('./projectAsks');
