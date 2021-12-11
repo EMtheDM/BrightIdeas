@@ -35,6 +35,7 @@ router.get('/:id', async (req, res) => {
 
 // POST a new project
 router.post('/', withAuth, async (req, res) => {
+console.log("We made it here to the POST route");
   try {
     const test = req.session;
     const projectData = await Project.create({
