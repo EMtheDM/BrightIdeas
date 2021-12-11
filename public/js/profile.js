@@ -3,16 +3,16 @@ const newFormHandler = async (event) => {
     event.preventDefault();
 
     const name = document.querySelector('#project-name').value.trim();
-    const clientName = document.querySelector('#client-name').value.trim();
-    const clientEmail = document.querySelector('#client-email').value.trim();
-    const clientPhone = document.querySelector('#client-phone').value.trim();
+    const client_name = document.querySelector('#client-name').value.trim();
+    const client_email = document.querySelector('#client-email').value.trim();
+    const client_phone = document.querySelector('#client-phone').value.trim();
     const description = document.querySelector('#project-desc').value.trim();
 
     // Project can be created as long as it has a name, clientName, and description
-    if (name && clientName && description) {
+    if (name && client_name && client_phone) {
         const response = await fetch(`/api/projects`, {
             method: 'POST',
-            body: JSON.stringify({ name, clientName, description }),
+            body: JSON.stringify({ name, client_name, client_email, client_phone, description }),
             headers: {
                 'Content-Type': 'application/json',
         },
