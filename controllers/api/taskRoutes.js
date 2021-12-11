@@ -27,7 +27,8 @@ router.put('/edit/:id', withAuth, async (req, res) => {
     try {
         const dbTaskData = await Tasks.update({
             name: req.body.name,
-            task_content: req.body.task_content
+            task_content: req.body.task_content,
+            stage: req.body.stage
         },
         {
             where: {
