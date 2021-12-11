@@ -40,10 +40,10 @@
 
 
 {{!-- Displays all current projects (if any) --}}
-    {{#if projects.length}}
+    
     <div class="col-md-6 project-list">
         <h3>Current Projects:</h3>
-
+    {{#if projects.length}}
 {{!-- Tells Handlebars what information to display from each project --}}
         {{#each projects as |project|}}
         <div class="row mb-2">
@@ -55,8 +55,9 @@
             </div>
         </div>
         {{/each}}
+        {{/if}}
     </div>
-    {{/if}}
+    
 
 </div>
 
