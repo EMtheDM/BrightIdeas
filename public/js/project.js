@@ -7,12 +7,11 @@ const backToList = async (event) => {
 
 const addProjectAsk = async (event) => {
     event.preventDefault();
-    var popup = document.getElementById('add-ask-btn');
-    popup.classList.toggle('show');
-}
+    prompt('What are the requirements of the project?');
+};
 
 document
-    .querySelector('#add-ask-btn')
+    .querySelector('.new-ask-btn')
     .addEventListener('click', addProjectAsk);
 
 document

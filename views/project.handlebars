@@ -3,29 +3,28 @@
     <div class="project-main">
         <div class="account-info">
             <div class="account-name">
-                <h2>{{ project.client_name }}</h2>
+                <h2>{{project.name}}</h2>
             </div>
             <div class="contact-info">
-                <h4>{{ project.client_email }}</h4>
+
             </div>
         </div>
-
 
 {{!-- Displays all current project asks --}}
     <div class="project-asks-container">
                     <h4>Project Asks:</h4>
-
-        {{#if project.project_asks.length}}
+        <button class="btn new-ask-btn">+</button>
+        {{#if projectAsks.length}}
         <div class="project-asks">
 
-            {{#each project.project_asks as |projectAsk|}}
+            {{#each projectAsks as |projectAsk|}}
             {{!-- Not sure how to make sure I'm pulling from the right project. 
             How to incorporate the project id? Project-ask-item container
             is set up for Flex to be set in a row so you can delete asks with the 'X'
             if the user wants to. --}}
             <div class="project-ask-item">
                 <div class="project-ask-desc">
-                    <p>{{projectAsk.description}}</p>
+                    <p>{{projectAsks.description}}</p>
                 </div>
                 <div class="project-ask-delete">
                     <button class="project-ask-del-btn">X</button>
@@ -34,29 +33,6 @@
         {{/each}}
         </div>
         {{/if}}
-        <button onclick='addProjectAsk()' type="button" class="btn btn-primary" id="add-ask-btn" data-toggle="modal" data-target="#exampleModal">+</button>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New Ask</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-        
     </div>
 {{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
     <div class="tasks kanban">
@@ -64,16 +40,16 @@
             
         <div class="to-do-container">
 
-                {{#if project.tasks.length}}
+                {{#if tasks.length}}
 
-                {{#each project.tasks as |task|}}
+                {{#each tasks as |task|}}
 
                 {{!-- How do I tell the task which div to be in based
                 on its stage? (To Do, In Progress, and Done) --}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{task.task_content}}</p>
+                        <p>{{tasks.task_content}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -85,13 +61,13 @@
             </div>
             <div class="in-progress-container">
 
-                {{#if project.tasks.length}}
+                {{#if tasks.length}}
 
-                {{#each project.tasks as |task|}}
+                {{#each tasks as |task|}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{task.name}}</p>
+                        <p>{{tasks.task_content}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -104,13 +80,13 @@
             </div>
             <div class="done-container">
 
-                    {{#if project.tasks.length}}
+                    {{#if tasks.length}}
 
-                    {{#each project.tasks as |task|}}
+                    {{#each tasks as |task|}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{task.task_content}}</p>
+                        <p>{{tasks.task_content}}</p>
                     </div>
                 <div class="project-task-delete">
                     <button class="project-task-del-btn">X</button>
@@ -140,13 +116,11 @@
 
         <div class="comment-feed">
                 
-                {{#if project.comments.length}}
-                {{#each project.comments as |comment|}}
+                {{#if comment.length}}
 
             <p>
-                {{comment.comment}}
+                {{project.comment}}
             </p>
-                {{/each}}
 
                 {{/if}}
         </div>
