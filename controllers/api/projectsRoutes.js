@@ -6,7 +6,7 @@ const withAuth = require('../../utils/auths');
 // In this our case, the resource is "projects"
 // - create
 // - list (index)
-// - update 
+// - update
 // - delete
 
 // // TODO: GET route that shows all projects. Is that redundant here?
@@ -19,7 +19,7 @@ const withAuth = require('../../utils/auths');
 // });
 
 // GET a project using its ID
-router.get('/projects/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id);
     if (!userData) {
@@ -33,7 +33,29 @@ router.get('/projects/:id', async (req, res) => {
 });
 
 // UPDATE a project using its ID
-router.put('/projects/:id', withAuth, async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const test = req.session;
+    const projectData = await Project.create({
+      ...req.body,
+      date_created: new Date().getTime(),
+      created_at: new Date().getTime(),
+      updated_at: new Date().getTime(),
+      project_id: req.session.user_id
+    });
+    if (!projectData) {
+      res.status(404).json({ message: 'No project with this id!' });
+      return;
+    }
+    res.status(200).json(projectData.dataValues);
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+// UPDATE a project using its ID
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.update(req.body, {
       where: {
@@ -69,7 +91,9 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json({
+      success: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }

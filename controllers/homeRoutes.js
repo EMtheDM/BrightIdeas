@@ -65,11 +65,19 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [{ model: Project }],
     });
 
+    const projects = await Project.findAll({
+      attributes: ['name', 'id'],
+      where: {
+        project_id: req.session.user_id
+      }
+    })
+
     const user = userData.get({ plain: true });
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      projects: projects.map(project => project.dataValues)
     });
   } catch (err) {
     res.status(500).json(err);
