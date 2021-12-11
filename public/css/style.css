@@ -28,7 +28,7 @@ h3 {
 }
 
 .nav {
-    text-align: center;
+    text-align: end;
 }
 
 .project-ask-item {
@@ -39,4 +39,17 @@ h3 {
 .kanban {
     display: flex;
     flex-direction: row;
+}
+
+.not-member {
+    text-align: center;
+}
+
+
+.main-login-container {
+    text-align: center;
+}
+
+.login-btn {
+    margin: 1rem;
 }

@@ -1,5 +1,6 @@
 {{!-- Login template --}}
-<div class="col-md-6">
+<div class="main-login-container">
+<div>
         <h1 class="main-title"></h1>
         <br>
         <h2>Login</h2>
@@ -13,13 +14,15 @@
                 <input class="form-input" type="password" id="password-login" />
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Login</button>
+                <button class="btn btn-primary login-btn" type="submit">Login</button>
             </div>
         </form>
     </div> 
 
+    <p class="not-member">Not already a member? <br> Go ahead and sign up below!</p>
+
 {{!-- Sign up template --}}
-    <div class="col-md-6">
+    <div>
         <h1 class="main-title"></h1>
         <br>
         <h2>Signup</h2>
@@ -38,10 +41,11 @@
                 <input class="form-input" type="password" id="password-signup" />
             </div>
             <div class="form-group">
-                <button class="btn btn-primary" type="submit">Sign Up</button>
+                <button class="btn btn-primary login-btn" type="submit">Sign Up</button>
             </div>
         </form>
     </div>   
+</div>
 </div>
 
 <script src="./js/login.js"></script>
