@@ -42,7 +42,7 @@ router.post('/', withAuth, async (req, res) => {
       date_created: new Date().getTime(),
       created_at: new Date().getTime(),
       updated_at: new Date().getTime(),
-      project_id: req.session.user_id
+      user_id: req.session.user_id
     });
 
     if(!projectData) {

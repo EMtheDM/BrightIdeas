@@ -33,27 +33,27 @@ router.get('/', async (req, res) => {
 
 
 // Router to find projects by ID
-router.get('/project/:id', async (req, res) => {
-  try {
-    const projectData = await Project.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ['name'],
-        },
-      ],
-    });
+// router.get('/project/:id', async (req, res) => {
+//   try {
+//     const projectData = await Project.findByPk(req.params.id, {
+//       include: [
+//         {
+//           model: User,
+//           attributes: ['name'],
+//         },
+//       ],
+//     });
 
-    const project = projectData.get({ plain: true });
+//     const project = projectData.get({ plain: true });
 
-    res.render('project', {
-      ...project,
-      logged_in: req.session.logged_in
-    });
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
+//     res.render('project', {
+//       ...project,
+//       logged_in: req.session.logged_in
+//     });
+//   } catch (err) {
+//     res.status(500).json(err);
+//   }
+// });
 
 
 // Use withAuth middleware to prevent access to route
@@ -68,7 +68,7 @@ router.get('/profile', withAuth, async (req, res) => {
     const projects = await Project.findAll({
       attributes: ['name', 'id'],
       where: {
-        project_id: req.session.user_id
+        user_id: req.session.user_id
       }
     })
 
@@ -84,7 +84,25 @@ router.get('/profile', withAuth, async (req, res) => {
   }
 });
 
+router.get('/project/:id', withAuth, async (req, res) => {
+  console.log(0, req.params.id);
+    try {
+      const projectData = await Project.findByPk(req.params.id, {
+        include: [
+          { model: Comment }, 
+          { model: ProjectAsks }, 
+          { model: Tasks }
+        ],
+      })
+      // console.log(projectData);
 
+      const project = projectData.get({ plain: true });
+console.log(project);
+      res.render('project');
+    } catch (err) {
+      res.status(500).json(err);
+    }
+})
 
 router.get('/login', (req, res) => {
   // If the user is already logged in, redirect the request to another route
@@ -101,3 +119,4 @@ router.get('/signup', (req, res) => {
 })
 
 module.exports = router;
+
