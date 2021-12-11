@@ -28,9 +28,9 @@
                     <button class="project-ask-del-btn">X</button>
                 </div>
             </div>
-
+        {{/each}}
         </div>
-
+    {{/if}}
 {{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
         <div class="tasks kanban">
 
@@ -52,6 +52,8 @@
                     </div>
                 </div>
 
+                {{/if}}
+
             </div>
             <div class="in-progress-container">
 
@@ -68,6 +70,8 @@
                     </div>
                 </div>
 
+                {{/if}}
+
             </div>
             <div class="done-container">
 
@@ -83,6 +87,8 @@
                     <button class="project-task-del-btn">X</button>
                 </div>
                 </div>
+
+                    {{/if}}
 
             </div>
         </div>
@@ -118,23 +124,11 @@
             <p>
                 {{project.comment}}
             </p>
+
+                {{#/if}}
         </div>
 
     </div>
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-    <p>Contact Info</p>
-    <
