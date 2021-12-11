@@ -8,7 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@700&family=Raleway:ital,wght@1,500&family=Shalimar&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,500&family=Shalimar&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/css/jass.css">
     <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -16,19 +18,22 @@
 <body>
     <div class="flex-column justify-space-around">
         <header class="display-flex justify-space-between align-center p-2">
-            <h1>BrightIdeas</h1>
 
             {{!-- Conditional Navigation Options --}}
             {{!-- If logged in, show logout option. If logged out, show login option. --}}
             <nav class="nav">
                 {{#if logged_in}}
-                    <a href='/profile'>Profile</a>
-                    <button class="btn" id="logout">logout</button>
+                    <button class="btn"><a href='/profile'>Profile</a></button>
+                    <button class="btn"><a href="/">Logout</a></button>
                 {{else}}
-                    <a class="login-link" href="/login">login</a>
+                    {{!-- <button><a class="login-link" href="/login">login</a></button> --}}
+                    {{!-- <button><a class="btn" id="login"></a></button> --}}
                 {{/if}}
             </nav>
         </header>
+
+                    <h1>BrightIdeas</h1>
+
         <main class="container container-fluid mt-5">
             {{{ body }}}
         </main>

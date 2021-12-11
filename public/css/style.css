@@ -12,14 +12,14 @@
 }
 
 h1 {
-    font-family: 'Fuzzy Bubbles', cursive;
+    font-family: 'Mukta', sans-serif;   
     font-size: 5rem;
     text-align: center;
 }
 
 h3 {
     text-align: center;
-    font-family: 'Fuzzy Bubbles', cursive;
+    font-family: 'Mukta', sans-serif;  
     font-size: 3rem;
 }
 
@@ -28,7 +28,9 @@ h3 {
 }
 
 .nav {
-    text-align: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
 }
 
 .project-ask-item {
@@ -36,10 +38,7 @@ h3 {
     flex-direction: row;
 }
 
-.kanban {
-    display: flex;
-    flex-direction: row;
-}
+
 
 .not-member {
     text-align: center;
@@ -52,4 +51,48 @@ h3 {
 
 .login-btn {
     margin: 1rem;
+}
+
+.btn {
+    border-radius: 5%;
+}
+
+.project-asks-container {
+    border: 3px solid black;
+    margin: 2rem;
+}
+
+.back-to-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.back-to-list-btn {
+    border-radius: 10%;
+}
+
+.comment-main-container {
+    border: 3px solid black;
+    margin: 2rem;
+    width: 50%;
+}
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 3px solid black;    
+}
+
+.kanban {
+    display: flex;
+    flex-direction: row;
+    border: 3px solid black;
+    margin: 2rem;
+}
+
+.project-main {
+    width: 50%;
 }

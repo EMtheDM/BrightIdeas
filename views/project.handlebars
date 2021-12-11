@@ -11,9 +11,11 @@
         </div>
 
 {{!-- Displays all current project asks --}}
-    {{#if projectAsks.length}}
+    <div class="project-asks-container">
+                    <h4>Project Asks:</h4>
+
+        {{#if projectAsks.length}}
         <div class="project-asks">
-            <h3>Project Asks:</h3>
 
             {{#each projectAsks as |projectAsk|}}
             {{!-- Not sure how to make sure I'm pulling from the right project. 
@@ -30,12 +32,14 @@
             </div>
         {{/each}}
         </div>
-    {{/if}}
+        {{/if}}
+    </div>
 {{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
-        <div class="tasks kanban">
-
+    <div class="tasks kanban">
+        <h4>To Do</h4>
             
-            <div class="to-do-container">
+        <div class="to-do-container">
+
                 {{#if tasks.length}}
 
                 {{#each tasks as |task|}}
@@ -98,18 +102,17 @@
     </div>
 
     {{!-- Comment container on the right side (if we have time) --}}
-    <div class="comment-main">
+    <div class="comment-main-container">
+        <h4>Activity Feed</h4>
         <div class="comment-logout-main">
             <div class="comment-text-area">
                 <div class="text-area-actual">
 
                 </div>
             </div>
-                <div class="back-to-list">
-                    <button class="back-to-list-btn">Back to List</button>
-                </div>
+
             </div>
-        </div>
+    
 
         <div class="comment-feed">
                 
@@ -121,8 +124,17 @@
 
                 {{/if}}
         </div>
-
     </div>
+
+        
+
+
+</div>
+
+        {{!-- Back to List button --}}
+        <div class="back-to-list">
+                <button class="back-to-list-btn">Back to List</button>
+        </div>
 
 <script src='/js/project.js'></script>
 </div>
