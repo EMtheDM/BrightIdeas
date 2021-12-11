@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const { DataTypes } = require('sequelize/dist');
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auths');
 
@@ -19,7 +20,7 @@ const withAuth = require('../../utils/auths');
 // });
 
 // GET a project using its ID
-router.get('/projects/:id', async (req, res) => {
+router.get('/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id);
     if (!userData) {
@@ -32,8 +33,35 @@ router.get('/projects/:id', async (req, res) => {
   }
 });
 
+// POST a new project
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const test = req.session;
+    const projectData = await Project.create({
+      ...req.body,
+      date_created: new Date().getTime(),
+      created_at: new Date().getTime(),
+      updated_at: new Date().getTime(),
+      project_id: req.session.user_id
+    });
+
+    if(!projectData) {
+      res.status(404).json({ message: 'No project with this id!' });
+      return;
+    }
+
+    res.status(200).json(projectData.dataValues);
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+
+
+
 // UPDATE a project using its ID
-router.put('/projects/:id', withAuth, async (req, res) => {
+router.put('/:id', withAuth, async (req, res) => {
   try {
     const projectData = await Project.update(req.body, {
       where: {
@@ -69,7 +97,9 @@ router.delete('/:id', withAuth, async (req, res) => {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json({
+      success: true
+    });
   } catch (err) {
     res.status(500).json(err);
   }
