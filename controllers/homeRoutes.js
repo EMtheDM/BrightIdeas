@@ -94,11 +94,12 @@ router.get('/project/:id', withAuth, async (req, res) => {
           { model: Tasks }
         ],
       })
-      // console.log(projectData);
+      console.log("--------------------------------")
+      console.log(projectData);
 
       const project = projectData.get({ plain: true });
-console.log(project);
-      res.render('project');
+    console.log(project);
+      res.render('project', { project });
     } catch (err) {
       res.status(500).json(err);
     }

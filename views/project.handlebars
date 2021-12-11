@@ -3,28 +3,29 @@
     <div class="project-main">
         <div class="account-info">
             <div class="account-name">
-                <h2>{{project.name}}</h2>
+                <h2>{{ project.client_name }}</h2>
             </div>
             <div class="contact-info">
-
+                <h4>{{ project.client_email }}</h4>
             </div>
         </div>
+
 
 {{!-- Displays all current project asks --}}
     <div class="project-asks-container">
                     <h4>Project Asks:</h4>
 
-        {{#if projectAsks.length}}
+        {{#if project.project_asks.length}}
         <div class="project-asks">
 
-            {{#each projectAsks as |projectAsk|}}
+            {{#each project.project_asks as |projectAsk|}}
             {{!-- Not sure how to make sure I'm pulling from the right project. 
             How to incorporate the project id? Project-ask-item container
             is set up for Flex to be set in a row so you can delete asks with the 'X'
             if the user wants to. --}}
             <div class="project-ask-item">
                 <div class="project-ask-desc">
-                    <p>{{projectAsks.description}}</p>
+                    <p>{{projectAsk.description}}</p>
                 </div>
                 <div class="project-ask-delete">
                     <button class="project-ask-del-btn">X</button>
@@ -40,16 +41,16 @@
             
         <div class="to-do-container">
 
-                {{#if tasks.length}}
+                {{#if project.tasks.length}}
 
-                {{#each tasks as |task|}}
+                {{#each project.tasks as |task|}}
 
                 {{!-- How do I tell the task which div to be in based
                 on its stage? (To Do, In Progress, and Done) --}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{tasks.task_content}}</p>
+                        <p>{{task.task_content}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -61,13 +62,13 @@
             </div>
             <div class="in-progress-container">
 
-                {{#if tasks.length}}
+                {{#if project.tasks.length}}
 
-                {{#each tasks as |task|}}
+                {{#each project.tasks as |task|}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{tasks.task_content}}</p>
+                        <p>{{task.name}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -80,13 +81,13 @@
             </div>
             <div class="done-container">
 
-                    {{#if tasks.length}}
+                    {{#if project.tasks.length}}
 
-                    {{#each tasks as |task|}}
+                    {{#each project.tasks as |task|}}
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{tasks.task_content}}</p>
+                        <p>{{task.task_content}}</p>
                     </div>
                 <div class="project-task-delete">
                     <button class="project-task-del-btn">X</button>
@@ -116,11 +117,13 @@
 
         <div class="comment-feed">
                 
-                {{#if comment.length}}
+                {{#if project.comments.length}}
+                {{#each project.comments as |comment|}}
 
             <p>
-                {{project.comment}}
+                {{comment.comment}}
             </p>
+                {{/each}}
 
                 {{/if}}
         </div>
