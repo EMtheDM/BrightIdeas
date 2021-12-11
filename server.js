@@ -8,36 +8,41 @@ const sequelize = require('./config/connection');
 
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+try {
+  const app = express();
+  const PORT = process.env.PORT || 3001;
 
 // Handlebars.js engine object with custom helper functions
-const hbs = exphbs.create({ helpers });
+  const hbs = exphbs.create({helpers});
 
-const sess = {
-  secret: 'Super secret secret',
-  cookie: {
-    maxAge: 36000,
-  },
-  resave: false,
-  saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
-};
+  const sess = {
+    secret: 'Super secret secret',
+    cookie: {
+      maxAge: 36000,
+    },
+    resave: true,
+    saveUninitialized: true,
+    store: new SequelizeStore({
+      db: sequelize
+    })
+  };
 
-app.use(session(sess));
+  app.use(session(sess));
 
 // Inform Express.js which template engine we're using
-app.engine('handlebars', hbs.engine);
-app.set('view engine', 'handlebars');
+  app.engine('handlebars', hbs.engine);
+  app.set('view engine', 'handlebars');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.json());
+  app.use(express.urlencoded({extended: true}));
+  app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(routes);
+  app.use(routes);
 
-sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
-});
+  sequelize.sync({force: false}).then(() => {
+    app.listen(PORT, () => console.log('Now listening'));
+  });
+
+} catch(e) {
+  console.log(e)
+}

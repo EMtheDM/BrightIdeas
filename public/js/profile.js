@@ -7,6 +7,7 @@ const newFormHandler = async (event) => {
     const clientEmail = document.querySelector('#client-email').value.trim();
     const clientPhone = document.querySelector('#client-phone').value.trim();
     const description = document.querySelector('#project-desc').value.trim();
+    debugger
 
     // Project can be created as long as it has a name, clientName, and description
     if (name && clientName && description) {
@@ -45,7 +46,7 @@ const delButtonHandler = async (event) => {
 };
 
 // Event listener for New Project form handler
-document 
+document
     .querySelector('.new-project-form')
     .addEventListener('submit', newFormHandler);
 
