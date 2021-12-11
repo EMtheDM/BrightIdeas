@@ -46,7 +46,7 @@ const delButtonHandler = async (event) => {
 
 // Event listener for New Project form handler
 document 
-    .querySelector('#create-project')
+    .querySelector('.new-project-form')
     .addEventListener('submit', newFormHandler);
 
 
