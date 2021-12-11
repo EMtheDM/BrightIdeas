@@ -22,7 +22,7 @@ router.get('/', async (req, res) => {
     // Serialize data so the template can read it
     const projects = projectData.map((project) => project.get({ plain: true }));
     // Pass serialized data and session flag into template
-    res.render('profile', {
+    res.render(req.session.logged_in ? 'profile' : 'login', {
       projects, 
       logged_in: req.session.logged_in 
     });
@@ -65,11 +65,19 @@ router.get('/profile', withAuth, async (req, res) => {
       include: [{ model: Project }],
     });
 
+    const projects = await Project.findAll({
+      attributes: ['name', 'id'],
+      where: {
+        project_id: req.session.user_id
+      }
+    })
+
     const user = userData.get({ plain: true });
 
     res.render('profile', {
       ...user,
-      logged_in: true
+      logged_in: true,
+      projects: projects.map(project => project.dataValues)
     });
   } catch (err) {
     res.status(500).json(err);
