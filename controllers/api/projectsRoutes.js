@@ -23,7 +23,7 @@ const withAuth = require('../../utils/auths');
 router.get('/:id', async (req, res) => {
   try {
     const projectData = await Project.findByPk(req.params.id);
-    if (!userData) {
+    if (!projectData) {
       res.status(404).json({ message: 'No project with this id!' });
       return;
     }
