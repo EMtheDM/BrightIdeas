@@ -17,7 +17,7 @@
                 <p id="project-title"><a href="/project/{{project.id}}" id="project-link">{{project.name}}</a></p>
             </div>
             <div class="col-md-4" id="btn-bg">
-                <button class="btn btn-sm" id="delete-btn" data-id="{{project.id}}">🗑️</button>
+                <button class="btn btn-sm btn-danger" id="delete-btn" data-id="{{project.id}}">🗑️</button>
             </div>
         </div>
         {{/each}}
@@ -33,19 +33,19 @@
 {{!-- Criteria inputs for new projects --}}
         <div class="form-group">
             <label for="project-name">Project:</label>
-            <input class="form-input" type="text" id="project-name" name="project-name" />
+            <input class="form-input" type="text" id="create-project-name" name="project-name" />
         </div>
         <div class="form-group">
             <label for="client-name">Account:</label>
-            <input class="form-input" type="text" id="client-name" name="project-funding" />
+            <input class="form-input" type="text" id="create-client-name" name="project-funding" />
         </div>
         <div class="form-group">
             <label for="client-email">Email:</label>
-            <input class="form-input" type="text" id="client-email" name="project-funding" />
+            <input class="form-input" type="text" id="create-client-email" name="project-funding" />
         </div>
         <div class="form-group">
             <label for="client-phone">Phone:</label>
-            <input class="form-input" type="text" id="client-phone" name="project-funding" />
+            <input class="form-input" type="text" id="create-client-phone" name="project-funding" />
         </div>
         {{!-- <div class="form-group">
             <label for="project-desc">project asks:</label>
