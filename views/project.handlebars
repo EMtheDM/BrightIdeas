@@ -73,25 +73,7 @@
                 {{/if}}
 
             </div>
-            {{!-- <div class="in-progress-container">
 
-                {{#if tasks.length}}
-
-                {{#each tasks as |task|}}
-
-                <div class="project-task-item">
-                    <div class="project-task-desc">
-                        <p>{{task.task_content}}</p>
-                    </div>
-                    <div class="project-task-delete">
-                        <button class="project-task-del-btn">X</button>
-                    </div>
-                </div>
-                {{/each}}
-
-                {{/if}}
-
-            </div> --}}
             {{!-- <div class="done-container">
 
                     {{#if tasks.length}}
@@ -118,31 +100,31 @@
     {{!-- Comment container on the right side (if we have time) --}}
     <div class="comment-main-container">
         <h4 class="section-title">Activity Feed</h4>
-       <form class="form new-task-form" id="new-task-form">
+        <form class="form new-comment-form" id="new-comment-form">
 
-{{!-- Criteria inputs for new tasks --}}
+{{!-- Comment --}}
         <div class="form-group comment-form">
             <label for="comment-title" id="new-comment-name"></label>
             <input class="form-input" type="textarea" id="new-comment-title" name="comment-title" />
-            <button type="submit" class="btn btn-primary" id="create-comment">+</button>
+            <button data-id={{project.id}} type="submit" class="btn btn-primary" id="create-comment">+</button>
         </div>
         </form>
     
-
+    {{!-- {{#if comment.length}} --}}
         <div class="comment-feed">
-                
-                {{#if comment.length}}
-
-            <p>
-                {{project.comment}}
-            </p>
-
-                {{/if}}
+        {{#each project.comments as |comment|}}
+        <div class="comment-item">
+            <div class="comment-desc">               
+                <p>
+                    {{comment}}
+                </p>
+            </div>
         </div>
+        {{/each}}
+    </div>    
+    {{!-- {{/if}}       --}}
+
     </div>
-
-        
-
 
 </div>
 

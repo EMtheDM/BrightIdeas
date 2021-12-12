@@ -29,6 +29,7 @@ const newAskHandler = async (event) => {
     }
 };
 
+
 const newTaskHandler = async (event) => {
     event.preventDefault();
     console.log("----------DID WE MAKE IT HERE?-----------");
@@ -47,10 +48,12 @@ const newTaskHandler = async (event) => {
         });
 
         if (response.ok) {
+
             // const id = document.querySelector('#create-task').getAttribute('data-id');
             document.location.replace(`/project/${id}`);
         } else {
             alert ('Failed to create Task!')
+
         }
     }
 };
