@@ -101,7 +101,10 @@ router.get('/project/:id', withAuth, async (req, res) => {
       console.log(projectData);
 
       const project = projectData.get({ plain: true });
-    console.log(project);
+    console.log("----------------PROJECT GOES HERE!!!!!!!!!---------------", project);
+      req.session.save(() => {
+        req.session.project_id = req.params.id;
+      });
       res.render('project', { project });
     } catch (err) {
       res.status(500).json(err);

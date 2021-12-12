@@ -21,23 +21,20 @@
         <div class="form-group">
             <label for="ask-title" id="new-ask-name">New Ask:</label>
             <input class="form-input" type="textarea" id="new-ask-title" name="ask-title" />
-            <button type="submit" class="btn btn-primary" id="create-project">+</button>
+            <button data-id={{project.id}} type="submit" class="btn btn-primary" id="create-ask">+</button>
         </div>
         </form>
-        {{#if projectAsks.length}}
+        {{#if project.project_asks.length}}
         <div class="project-asks">
 
-            {{#each projectAsks as |projectAsk|}}
+            {{#each project.project_asks as |projectAsk|}}
             {{!-- Not sure how to make sure I'm pulling from the right project. 
             How to incorporate the project id? Project-ask-item container
             is set up for Flex to be set in a row so you can delete asks with the 'X'
             if the user wants to. --}}
             <div class="project-ask-item">
                 <div class="project-ask-desc">
-                    <p>{{projectAsks.description}}</p>
-                </div>
-                <div class="project-ask-delete">
-                    <button class="project-ask-del-btn">X</button>
+                    <p>{{projectAsk.description}}</p>
                 </div>
             </div>
         {{/each}}
@@ -68,7 +65,7 @@
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{tasks.task_content}}</p>
+                        <p>{{task.task_content}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -78,7 +75,7 @@
                 {{/if}}
 
             </div>
-            <div class="in-progress-container">
+            {{!-- <div class="in-progress-container">
 
                 {{#if tasks.length}}
 
@@ -86,7 +83,7 @@
 
                 <div class="project-task-item">
                     <div class="project-task-desc">
-                        <p>{{tasks.task_content}}</p>
+                        <p>{{task.task_content}}</p>
                     </div>
                     <div class="project-task-delete">
                         <button class="project-task-del-btn">X</button>
@@ -96,8 +93,8 @@
 
                 {{/if}}
 
-            </div>
-            <div class="done-container">
+            </div> --}}
+            {{!-- <div class="done-container">
 
                     {{#if tasks.length}}
 
@@ -115,7 +112,7 @@
 
                     {{/if}}
 
-            </div>
+            </div> --}}
         </div>
 
     </div>

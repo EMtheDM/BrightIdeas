@@ -4,10 +4,10 @@ const newFormHandler = async (event) => {
 
     console.log("here i am in event handler")
 
-    const name = document.querySelector('#project-name').value.trim();
-    const client_name = document.querySelector('#client-name').value.trim();
-    const client_email = document.querySelector('#client-email').value.trim();
-    const client_phone = document.querySelector('#client-phone').value.trim();
+    const name = document.querySelector('#create-project-name').value.trim();
+    const client_name = document.querySelector('#create-client-name').value.trim();
+    const client_email = document.querySelector('#create-client-email').value.trim();
+    const client_phone = document.querySelector('#create-client-phone').value.trim();
 
     // Project can be created as long as it has a name, clientName, and description
     if (name && client_name && client_phone) {

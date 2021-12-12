@@ -6,12 +6,12 @@ const withAuth = require('../../utils/auths');
 // GET route that shows all projects asks
 router.get('/ProjectAsks/:id', async (req, res) => {
   try {
-    const userData = await ProjectAsks.findByPk(req.params.id);
-    if (!userData) {
+    const askData = await ProjectAsks.findByPk(req.params.id);
+    if (!askData) {
       res.status(404).json({ message: 'No project asks found!' });
       return;
     }
-    res.status(200).json(userData);
+    res.status(200).json(askData);
   } catch (err) {
     res.status(500).json(err);
   }
@@ -20,14 +20,16 @@ router.get('/ProjectAsks/:id', async (req, res) => {
 
 // POST route to create a projectAsks route to the tasks column
 router.post('/', withAuth, async (req, res) => {
+  console.log("We made it her to the POST route!");
   try {
-    const newAsk = await ProjectAsks.create({
+    const askData = await ProjectAsks.create({
       ...req.body,
       project_id: req.session.project_id,
     });
 
-    res.status(200).json(newAsk);
+    res.status(200).json(askData.dataValues);
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
