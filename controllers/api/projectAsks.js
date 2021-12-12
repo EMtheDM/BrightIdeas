@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const req = require('express/lib/request');
 const ProjectAsks = require('../../models/ProjectAsks');
 const withAuth = require('../../utils/auths');
 
@@ -20,8 +21,10 @@ router.get('/ProjectAsks/:id', async (req, res) => {
 
 // POST route to create a projectAsks route to the tasks column
 router.post('/', withAuth, async (req, res) => {
-  console.log("We made it her to the POST route!");
+  console.log("We made it here to the POST route!");
   try {
+    console.log('------------------------------',
+    req.session.project_id);
     const askData = await ProjectAsks.create({
       ...req.body,
       project_id: req.session.project_id,
