@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const { DataTypes } = require('sequelize/dist');
 const { Project } = require('../../models');
 const withAuth = require('../../utils/auths');
 
@@ -87,7 +86,11 @@ router.put('/:id', withAuth, async (req, res) => {
 
 // DELETE a project using ID
 router.delete('/:id', withAuth, async (req, res) => {
+  console.log('-----------DID WE MAKE IT HERE?------------');
   try {
+    console.log('---------------',
+    req.session.project_id,
+    '----------------');
     const projectData = await Project.destroy({
       where: {
         id: req.params.id,

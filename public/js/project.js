@@ -58,6 +58,33 @@ const newTaskHandler = async (event) => {
     }
 };
 
+const newCommentHandler = async (event) => {
+    event.preventDefault();
+    console.log("--------------DID WE MAKE IT TO THE COMMENT HANDLER?---------------");
+    const comment = document.querySelector('#new-comment-title').value.trim();
+    const id = document.querySelector('#create-comment').getAttribute('data-id');
+
+    if (comment) {
+        console.log('-----------------',
+        comment,
+        id,
+        '------------------');
+        const response = await fetch(`/api/comments`, {
+            method: 'POST',
+            body: JSON.stringify({ comment }),
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        });
+
+        if (response.ok) {
+            document.location.replace(`/project/${id}`);
+        } else {
+            alert ('Failed to create comment!');
+        }
+    }
+};
+
 document
     .querySelector('#create-ask')
     .addEventListener('click', newAskHandler);
@@ -65,6 +92,10 @@ document
 document
     .querySelector('#create-task')
     .addEventListener('click', newTaskHandler);
+
+document
+    .querySelector('#create-comment')
+    .addEventListener('click', newCommentHandler);
 
 document
     .querySelector('.back-to-list')
