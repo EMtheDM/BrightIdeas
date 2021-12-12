@@ -154,7 +154,7 @@ h5 {
 
 #new-project-form {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     flex-wrap: wrap;
 }
@@ -162,6 +162,10 @@ h5 {
 #project-name  {
     padding: 15px;
     font-size: 48px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
 }
 
 #project-title {
@@ -249,9 +253,9 @@ h5 {
 
 .account-info {
     display: flex;
-    justify-content: flex-start;
+    /* justify-content: flex-start;
     align-items: flex-end;
-    flex-wrap: wrap;
+    flex-wrap: wrap; */
 }
 
 #client-email {
@@ -270,15 +274,23 @@ h5 {
     padding: 5px;
 }
 
+#client-name {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
 #new-ask-title {
-    width: 75%;
+    width: 80%;
     resize: both;
 }
 
-#new-ask-form {
+/* #new-ask-form {
     display: flex;
-    flex-direction: row;
-}
+    /* flex-direction: row;
+} */
 
 /* .form-group {
     display: flex;
@@ -290,7 +302,7 @@ h5 {
 }
 
 #new-task-title {
-    width: 90%;
+    width: 80%;
     resize: both;
 }
 
@@ -303,7 +315,7 @@ h5 {
 }
 
 #new-comment-title {
-    width: 90%;
+    width: 80%;
     resize: both;
     min-height: 40px;
     line-height: 20px;
