@@ -33,9 +33,9 @@
             is set up for Flex to be set in a row so you can delete asks with the 'X'
             if the user wants to. --}}
             <div class="project-ask-item">
-                <div class="project-ask-desc">
-                    <p>{{projectAsk.description}}</p>
-                </div>
+                <ul class="project-ask-desc">
+                    <li id="project-ask-desc">{{projectAsk.description}}</li>
+                </ul>
             </div>
         {{/each}}
         </div>
@@ -51,25 +51,23 @@
         <div class="form-group tasks-form">
             <label for="task-title" id="new-task-name"></label>
             <input class="form-input" type="text" id="new-task-title" name="task-title" />
-            <button type="submit" class="btn btn-primary" id="create-task">+</button>
+            <button type="submit" data-id={{project.id}} class="btn btn-primary" id="create-task">+</button>
         </div>
         </form>
         <div class="to-do-container">
+            
+                {{#if project.tasks.length}}
 
-                {{#if tasks.length}}
-
-                {{#each tasks as |task|}}
+                {{#each project.tasks as |task|}}
 
                 {{!-- How do I tell the task which div to be in based
                 on its stage? (To Do, In Progress, and Done) --}}
 
                 <div class="project-task-item">
-                    <div class="project-task-desc">
-                        <p>{{task.task_content}}</p>
-                    </div>
-                    <div class="project-task-delete">
-                        <button class="project-task-del-btn">X</button>
-                    </div>
+                    <ul class="project-task-desc">
+                        <li>{{task.task_content}}</li>
+                    </ul>
+                    
                 </div>
                 {{/each}}
                 {{/if}}

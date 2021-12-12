@@ -2,38 +2,31 @@ const { Tasks } = require('../models');
 
 const tasksData = [
     {
-        name: 'Compare donuts',
-        stage: 1,
+        task_content: 'Compare donuts',
         project_id: 1
     },
     {
-        name: 'Find locations',
-        stage: 2,
+        task_content: 'Find locations',
         project_id: 1
     },
     {
-        name: 'Take selfie',
-        stage: 3,
+        task_content: 'Take selfie',
         project_id: 1
     },
     {
-        name: 'Example 2',
-        stage: 1,
+        task_content: 'Example 2',
         project_id: 2
     },
     {
-        name: 'Example 3',
-        stage: 1,
+        task_content: 'Example 3',
         project_id: 2
     },
     {
-        name: 'Example 4',
-        stage: 2,
+        task_content: 'Example 4',
         project_id: 2
     },
     {
-        name: 'Example 5',
-        stage: 3,
+        task_content: 'Example 5',
         project_id: 2
     }
 ];
