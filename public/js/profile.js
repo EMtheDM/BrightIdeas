@@ -35,7 +35,7 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
         const id = event.target.getAttribute('data-id');
-console.log('----------DID WE MAKE IT HERE DELETE?------------');
+        
         const response = await fetch(`/api/projects/${id}`, {
             method: 'DELETE',
         });
