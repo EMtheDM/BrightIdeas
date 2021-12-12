@@ -97,7 +97,6 @@ h3 {
 }
 
 .kanban {
-    display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
@@ -149,7 +148,8 @@ h5 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    font-size: 18px;
+    font-size: 24px;
+    margin: 15px;
 }
 
 #new-project-form {
@@ -256,7 +256,7 @@ h5 {
 
 #client-email {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     padding: 5px;
@@ -264,14 +264,14 @@ h5 {
 
 #client-phone {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     align-items: center;
     flex-wrap: wrap;
     padding: 5px;
 }
 
 #new-ask-title {
-    width: 70%;
+    width: 75%;
     resize: both;
 }
 
@@ -289,12 +289,21 @@ h5 {
     margin: 2px;
 }
 
+#new-task-title {
+    width: 90%;
+    resize: both;
+}
+
+#new-task-name {
+    margin: 2px;
+}
+
 .comment-form {
     width: 100%;
 }
 
 #new-comment-title {
-    width: 75%;
+    width: 90%;
     resize: both;
     min-height: 40px;
     line-height: 20px;
@@ -306,47 +315,7 @@ h5 {
     border-radius: 10px;
 }
 
-
-#canvas-basic {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.project-asks {
+    margin: 8px;
 }
-
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-    main-container {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-
-
-/* Media queries */
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    main-container {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-/* @media only screen and (min-width: 768px) {} */
-
-/* Large devices (laptops/desktops, 992px and up) */
-/* @media only screen and (min-width: 992px) {} */ 
-
 
