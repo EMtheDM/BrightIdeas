@@ -12,7 +12,7 @@
 }
 
 h1 {
-    font-family: 'Mukta', sans-serif;   
+    font-family: 'Bakbak One', cursive;   
     font-size: 5rem;
     text-align: center;
 }
@@ -177,4 +177,42 @@ h2 {
 
 .form-input {
     background-color: white;
+}
+
+.login-form-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.signup-form-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#login-email-label {
+    margin: 5px;
+}
+
+#email-login {
+    margin: 5px;
+}
+
+#login-password-label {
+    margin: 5px;
+}
+
+#signup-email-label {
+    margin: 5px;
+}
+
+#email-signup {
+    margin: 5px;
+}
+
+#signup-password-label {
+    margin: 5px;
 }
