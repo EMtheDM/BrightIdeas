@@ -20,7 +20,7 @@
 
 {{!-- Criteria inputs for new asks --}}
         <div class="form-group">
-            <label for="ask-title" id="new-ask-name">New Ask:</label>
+            {{!-- <label for="ask-title" id="new-ask-name">New Ask:</label> --}}
             <input class="form-input" type="textarea" id="new-ask-title" name="ask-title" />
             <button data-id={{project.id}} type="submit" class="btn btn-primary" id="create-ask">+</button>
         </div>
@@ -111,12 +111,12 @@
         </div>
         </form>
     
-    {{#if project.comment.length}}
+    {{#if project.comments.length}}
     <div class="comments">
-        {{#each project.comment as |comment|}}
+        {{#each project.comments as |comment|}}
         <div class="comment-item">
             <ul class="comment-desc">
-                <li id="comment-item-desc">{{comment.description}}</li>
+                <li id="comment-item-desc">{{comment.comment}}</li>
             </ul>
         </div>
         {{/each}}
