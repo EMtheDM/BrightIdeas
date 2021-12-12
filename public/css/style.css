@@ -8,7 +8,7 @@
 }
 
 * {
-    background-color: var(--lightgreen)
+    background-color: #eefcff;
 }
 
 h1 {
@@ -97,3 +97,84 @@ h3 {
     width: 50%;
 }
 
+#delete-btn {
+    border: solid 2px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 24px;
+    padding: 10px;
+    border-radius: 15px;
+}
+
+#project-id {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    border: solid 2px;
+    width: 33%;
+    height: 250px;
+    font-size: 48px;
+    text-align: center;
+    margin: 0.5px;
+    border-radius: 25px;
+    background-color: #9fb7c5;
+}
+
+.project-list {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#new-project-form {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+h2 {
+    padding: 15px;
+}
+
+#project-title {
+    font-size: 48px;
+    background-color: #9fb7c5;
+}
+
+#project-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    background-color: #9fb7c5;
+    color: #1F456E;
+}
+
+#project-title-container {
+    background-color: #9fb7c5;
+}
+
+#btn-bg {
+    background-color: #9fb7c5;
+}
+
+#create-project {
+    border-radius: 10px;
+    margin: 2px;
+}
+
+.form-input {
+    background-color: white;
+}
