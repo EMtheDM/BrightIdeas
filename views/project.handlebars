@@ -110,20 +110,17 @@
         </div>
         </form>
     
-    {{!-- {{#if comment.length}} --}}
-        <div class="comment-feed">
-        {{#each project.comments as |comment|}}
+    {{#if project.comment.length}}
+    <div class="comments">
+        {{#each project.comment as |comment|}}
         <div class="comment-item">
-            <div class="comment-desc">               
-                <p>
-                    {{comment}}
-                </p>
-            </div>
+            <ul class="comment-desc">
+                <li id="comment-item-desc">{{comment.description}}</li>
+            </ul>
         </div>
         {{/each}}
-    </div>    
-    {{!-- {{/if}}       --}}
-
+    </div>
+    {{/if}}
     </div>
 
 </div>
