@@ -3,17 +3,26 @@
     <div class="project-main">
         <div class="account-info">
             <div class="account-name">
-                <h2>{{project.name}}</h2>
+                <h1 id="project-name">{{project.name}}:</h1>
             </div>
             <div class="contact-info">
-
+                <h5 id="client-email">Email: {{project.client_email}}</h5>
+                <h5 id="client-phone">Phone: {{project.client_phone}}</h5>
             </div>
         </div>
 
 {{!-- Displays all current project asks --}}
     <div class="project-asks-container">
-                    <h4>Project Asks:</h4>
-        <button class="btn new-ask-btn">+</button>
+                    <h4 class="section-title">Project Asks:</h4>
+        <form class="form new-ask-form" id="new-ask-form">
+
+{{!-- Criteria inputs for new asks --}}
+        <div class="form-group">
+            <label for="ask-title" id="new-ask-name">New Ask:</label>
+            <input class="form-input" type="textarea" id="new-ask-title" name="ask-title" />
+            <button type="submit" class="btn btn-primary" id="create-project">+</button>
+        </div>
+        </form>
         {{#if projectAsks.length}}
         <div class="project-asks">
 
@@ -36,8 +45,17 @@
     </div>
 {{!-- Kanban Style container with To Do, In Progress, and Done tasks --}}
     <div class="tasks kanban">
-        <h4>To Do</h4>
+        <h4 class="section-title">To Do's:</h4>
             
+            <form class="form new-task-form" id="new-task-form">
+
+{{!-- Criteria inputs for new tasks --}}
+        <div class="form-group tasks-form">
+            <label for="task-title" id="new-task-name"></label>
+            <input class="form-input" type="text" id="new-task-title" name="task-title" />
+            <button type="submit" class="btn btn-primary" id="create-task">+</button>
+        </div>
+        </form>
         <div class="to-do-container">
 
                 {{#if tasks.length}}
@@ -103,15 +121,16 @@
 
     {{!-- Comment container on the right side (if we have time) --}}
     <div class="comment-main-container">
-        <h4>Activity Feed</h4>
-        <div class="comment-logout-main">
-            <div class="comment-text-area">
-                <div class="text-area-actual">
+        <h4 class="section-title">Activity Feed</h4>
+       <form class="form new-task-form" id="new-task-form">
 
-                </div>
-            </div>
-
-            </div>
+{{!-- Criteria inputs for new tasks --}}
+        <div class="form-group comment-form">
+            <label for="comment-title" id="new-comment-name"></label>
+            <input class="form-input" type="textarea" id="new-comment-title" name="comment-title" />
+            <button type="submit" class="btn btn-primary" id="create-comment">+</button>
+        </div>
+        </form>
     
 
         <div class="comment-feed">
@@ -133,7 +152,7 @@
 
         {{!-- Back to List button --}}
         <div class="back-to-list">
-                <button class="back-to-list-btn">Back to List</button>
+                <button class="back-to-list-btn btn-primary">Back to List</button>
         </div>
 
 <script src='/js/project.js'></script>

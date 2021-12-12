@@ -60,6 +60,7 @@ h3 {
 .project-asks-container {
     border: 3px solid black;
     margin: 2rem;
+    border-radius: 5px;
 }
 
 .back-to-list {
@@ -70,11 +71,12 @@ h3 {
 }
 
 .back-to-list-btn {
-    border-radius: 10%;
+    border-radius: 10px;
 }
 
 .comment-main-container {
     border: 3px solid black;
+    border-radius: 5px;
     margin: 2rem;
     width: 50%;
 }
@@ -83,14 +85,18 @@ h3 {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 3px solid black;    
+    border: 3px solid black;
+    border-radius: 5px;
 }
 
 .kanban {
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
     border: 3px solid black;
     margin: 2rem;
+    border-radius: 5px;
 }
 
 .project-main {
@@ -135,6 +141,7 @@ h5 {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    font-size: 18px;
 }
 
 #new-project-form {
@@ -144,8 +151,9 @@ h5 {
     flex-wrap: wrap;
 }
 
-h2 {
+#project-name  {
     padding: 15px;
+    font-size: 48px;
 }
 
 #project-title {
@@ -215,4 +223,57 @@ h2 {
 
 #signup-password-label {
     margin: 5px;
+}
+
+.section-title {
+    margin: 5px;
+}
+
+.account-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+#client-email {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+#client-phone {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px;
+}
+
+#new-ask-title {
+    width: 70%;
+    resize: both;
+}
+
+#new-ask-name {
+    margin: 2px;
+}
+
+.comment-form {
+    width: 100%;
+}
+
+#new-comment-title {
+    width: 75%;
+    resize: both;
+    min-height: 40px;
+    line-height: 20px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.btn {
+    border-radius: 10px;
 }
