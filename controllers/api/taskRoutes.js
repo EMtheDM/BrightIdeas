@@ -4,14 +4,19 @@ const withAuth = require('../../utils/auths');
 
 // Router to create a Task
 router.post('/', withAuth, async (req, res) => {
+    console.log('------------WE MADE IT TO THE POST ROUTE!!!!!---------------');
     try {
+        console.log('------------------',
+        req.session.project_id,
+        '---------------------');
         const newTask = await Tasks.create({
             ...req.body,
-            user_id: req.session.user_id,
+            project_id: req.session.project_id,
         });
-
-        res.status(200).json(newTask);
+        console.log('------------',newTask.dataValues,'----------------');
+        res.status(200).json(newTask.dataValues);
     } catch (err) {
+        console.log(err);
         res.status(500).json(err);
     }
 });

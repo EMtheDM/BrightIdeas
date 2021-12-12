@@ -51,14 +51,14 @@
         <div class="form-group tasks-form">
             <label for="task-title" id="new-task-name"></label>
             <input class="form-input" type="text" id="new-task-title" name="task-title" />
-            <button type="submit" class="btn btn-primary" id="create-task">+</button>
+            <button type="submit" data-id={{project.id}} class="btn btn-primary" id="create-task">+</button>
         </div>
         </form>
         <div class="to-do-container">
 
-                {{#if tasks.length}}
+                {{#if project.tasks.length}}
 
-                {{#each tasks as |task|}}
+                {{#each project.tasks as |task|}}
 
                 {{!-- How do I tell the task which div to be in based
                 on its stage? (To Do, In Progress, and Done) --}}

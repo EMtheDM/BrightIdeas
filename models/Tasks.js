@@ -16,17 +16,9 @@ Tasks.init(
       primaryKey: true,
       autoIncrement: true
     },
-    name: {
-      type: DataTypes.STRING,
-      allowNull: false
-    },
     task_content: {
       type: DataTypes.STRING,
       allowNull: true,
-    },
-    stage: {
-      type: DataTypes.INTEGER,
-      allowNull: false
     },
     project_id: {
       type: DataTypes.INTEGER,
