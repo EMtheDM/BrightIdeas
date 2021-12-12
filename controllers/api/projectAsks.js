@@ -56,6 +56,26 @@ router.put('/ProjectAsks/:id', async (req, res) => {
   }
 });
 
+// Router to delete an Ask based on its ID
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+      const projectAskData = await ProjectAsks.destroy({
+          where: {
+              id: req.params.id,
+              project_id: req.session.project_id,
+          },
+      });
+
+      if (!projectAskData) {
+          res.status(404).json({ message: 'No project ask found with this id!' });
+          return;
+      }
+
+      res.status(200).json(projectAskData);
+  } catch (err) {
+      res.status(500).json(err);
+  }
+});
 
 // Exporting the router
 module.exports = router;
