@@ -18,7 +18,8 @@ Project.belongsTo(User, {
 });
 
 Project.hasMany(Comment, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE'
 });
 
 Comment.belongsTo(Project, {
@@ -30,7 +31,8 @@ ProjectAsks.belongsTo(Project, {
 });
 
 Project.hasMany(ProjectAsks, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE'
 });
 
 Tasks.belongsTo(Project, {
@@ -38,7 +40,8 @@ Tasks.belongsTo(Project, {
 });
 
 Project.hasMany(Tasks, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE'
 });
 
 
