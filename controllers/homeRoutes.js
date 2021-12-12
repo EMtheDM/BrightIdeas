@@ -11,7 +11,10 @@ const withAuth = require('../utils/auths');
 router.get('/', async (req, res) => {
   try {
     // Get all projects and JOIN with user data
+    // TODO: you want to filter project by user_id
+    // where user_id = <id of current signed in user>
     const projectData = await Project.findAll({
+      // where: 
       include: [
         {
           model: User,
