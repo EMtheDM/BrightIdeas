@@ -6,6 +6,7 @@
                 <h1 id="project-name">{{project.name}}:</h1>
             </div>
             <div class="contact-info">
+                <h5 id="client-name">Client: {{project.client_name}}</h5>
                 <h5 id="client-email">Email: {{project.client_email}}</h5>
                 <h5 id="client-phone">Phone: {{project.client_phone}}</h5>
 
@@ -101,7 +102,7 @@
 
     {{!-- Comment container on the right side (if we have time) --}}
     <div class="comment-main-container">
-        <h4 class="section-title">Activity Feed</h4>
+        <h4 class="section-title comment-title">Activity Feed</h4>
         <form class="form new-comment-form" id="new-comment-form">
 
 {{!-- Comment --}}
