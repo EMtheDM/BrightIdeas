@@ -64,7 +64,7 @@ h3 {
 }
 
 .project-asks-container {
-    border: 1px solid gray;
+    border: 1px solid black;
     margin: 2rem;
     border-radius: 5px;
     background-color: #eefcff;
@@ -82,27 +82,27 @@ h3 {
 }
 
 .comment-main-container {
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 5px;
     margin: 2rem;
     width: 50%;
-    background-color: #eefcff;
+    background-color: #4f99b8;
 }
 
 .main-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    border: 1px solid gray;
+    border: 1px solid black;
     border-radius: 5px;
-    background-color: #eefcff;
+    background-color: #4f99b8;
 }
 
 .kanban {
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    border: 1px solid gray;
+    border: 1px solid black;
     margin: 2rem;
     border-radius: 5px;
     background-color: #eefcff;
@@ -110,7 +110,7 @@ h3 {
 
 .project-main {
     width: 50%;
-    background-color: #eefcff;
+    background-color: #4f99b8;
 }
 
 #delete-btn {
@@ -212,7 +212,7 @@ h5 {
 }
 
 .form-input {
-    background-color: white;
+    background-color: #a0ced9;
     margin: 1rem;
     border-radius: 10px;
 }
@@ -261,7 +261,7 @@ h5 {
 }
 
 .comment-title, .comment-form {
-    background-color: #eefcff;
+    background-color: #4f99b8;
 }
 
 .account-info {
