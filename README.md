@@ -3,7 +3,8 @@
 # Video Walkthrough
 
 ```
-[https://watch.screencastify.com/v/SVuEDqdGYjpWOZkQxJg3](url)
+[![Watch the video walk-through](https://watch.screencastify.com/v/SVuEDqdGYjpWOZkQxJg3)]
+
 
 ```
 
