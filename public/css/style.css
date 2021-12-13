@@ -1,3 +1,4 @@
+/* ===================== Color Variables ======================  */
 :root {
     --lightgray: #eae7e2;
     --lightteal: #d7e2e8;
@@ -8,13 +9,48 @@
 }
 
 
-/* Universal */
+/* ========================== Universal ======================= */
 * {
     background-color: #4f99b8;
 }
 
+.btn {
+    border-radius: 10px;
+}
 
-/* Headings */
+.btn-primary {
+    background-color: #a0ced9;
+    color: #355c7d;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.btn-primary:hover {
+    opacity: 0.5;
+    background-color: #809bce;
+    color: #355c7d;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.form-input {
+    background-color: #a0ced9;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+ul {
+    background-color: #eefcff;
+}
+
+li {
+    background-color: #eefcff;
+}
+
+
+/* ======================== Headings ========================== */
 h1 {
     font-family: 'Bakbak One', cursive;   
     font-size: 5rem;
@@ -27,7 +63,17 @@ h3 {
     font-size: 3rem;
 }
 
+h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    font-size: 24px;
+    margin: 15px;
+}
 
+
+/* ====================== Navigation ======================= */
 
 .login-link {
     font-size: 1.5rem;
@@ -39,19 +85,31 @@ h3 {
     justify-content: end;
 }
 
-.project-ask-item {
-    display: flex;
-    flex-direction: row;
-    background-color: #eefcff;
+#logout-btn-a {
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 15px;
+    color: #355c7d;
+    font-weight: bold;
+    background-color: #a0ced9;
+}
+
+#logout-btn-a:hover {
+    opacity: 0.5;
 }
 
 
-.not-member {
+
+
+
+/* ======================== Login Page Elements ====================== */
+
+.main-login-container {
     text-align: center;
 }
 
-
-.main-login-container {
+.not-member {
     text-align: center;
 }
 
@@ -59,14 +117,103 @@ h3 {
     margin: 1rem;
 }
 
-.btn {
-    border-radius: 5%;
+.login-form-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.signup-form-grp {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#login-email-label,
+#email-login,
+#login-password-label,
+#signup-email-label,
+#email-signup,
+#signup-password-label {
+    margin: 5px;
+}
+
+
+/* ======================== Profile Page ========================= */
+
+#new-project-form {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#project-link {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    background-color: #8eccd8;
+    color: #1F456E;
+}
+
+#project-title-container {
+    background-color: #8eccd8;
+    border-radius: 10%;
+}
+
+#project-title {
+    font-size: 48px;
+    background-color: #8eccd8;
+}
+
+
+#btn-bg {
+    background-color: #8eccd8;
+}
+
+#create-project {
+    border-radius: 10px;
+    margin: 2px;
+    color: #355c7d;
+    background-color: #a0ced9;
+    border: 1px solid black;
+    font-weight: bold;
+}
+
+#create-project:hover {
+    opacity: 0.5;
+}
+
+
+/* ======================= Project Page ========================= */
+
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #4f99b8;
+}
+
+.project-main {
+    width: 50%;
+    background-color: #4f99b8;
 }
 
 .project-asks-container {
     border: 1px solid black;
     margin: 2rem;
     border-radius: 5px;
+    background-color: #eefcff;
+}
+
+.project-ask-item {
+    display: flex;
+    flex-direction: row;
     background-color: #eefcff;
 }
 
@@ -86,16 +233,7 @@ h3 {
     border-radius: 5px;
     margin: 2rem;
     width: 50%;
-    background-color: #4f99b8;
-}
-
-.main-container {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #4f99b8;
+    background-color: #eefcff;
 }
 
 .kanban {
@@ -108,10 +246,6 @@ h3 {
     background-color: #eefcff;
 }
 
-.project-main {
-    width: 50%;
-    background-color: #4f99b8;
-}
 
 #delete-btn {
     border: solid 2px;
@@ -146,22 +280,6 @@ h3 {
     width: 100%;
 }
 
-h5 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    font-size: 24px;
-    margin: 15px;
-}
-
-#new-project-form {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
 #project-name  {
     padding: 15px;
     font-size: 48px;
@@ -172,123 +290,30 @@ h5 {
     background-color: #eefcff;
 }
 
-#project-title {
-    font-size: 48px;
-    background-color: #8eccd8;
-}
-
-/* #project.title:hover {
-
-} */
-
-#project-link {
-    display: block;
-    height: 100%;
-    width: 100%;
-    text-decoration: none;
-    background-color: #8eccd8;
-    color: #1F456E;
-}
-
-#project-title-container {
-    background-color: #8eccd8;
-}
-
-#btn-bg {
-    background-color: #8eccd8;
-}
-
-#create-project {
-    border-radius: 10px;
-    margin: 2px;
-    color: #355c7d;
-    background-color: #a0ced9;
-    border: 1px solid black;
-    font-weight: bold;
-}
-
-#create-project:hover {
-    opacity: 0.5;
-}
-
-.form-input {
-    background-color: #a0ced9;
-    margin: 1rem;
-    border-radius: 10px;
-}
-
-.login-form-grp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-.signup-form-grp {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-}
-
-#login-email-label {
-    margin: 5px;
-}
-
-#email-login {
-    margin: 5px;
-}
-
-#login-password-label {
-    margin: 5px;
-}
-
-#signup-email-label {
-    margin: 5px;
-}
-
-#email-signup {
-    margin: 5px;
-}
-
-#signup-password-label {
-    margin: 5px;
-}
-
 .section-title {
     margin: 1rem;
     background-color: #eefcff;
 }
 
-.comment-title, .comment-form {
+.comment-title {
+    background-color: #eefcff;
+} 
+
+.comment-form {
     background-color: #4f99b8;
 }
 
 .account-info {
     display: flex;
+    border: solid 1px black;
+    margin: 2rem;
     /* justify-content: flex-start;
     align-items: flex-end;
     flex-wrap: wrap; */
 }
 
-#client-email {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 5px;
-    background-color: #eefcff;
-}
-
-#client-phone {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 5px;
-    background-color: #eefcff;
-}
-
+#client-email,
+#client-phone,
 #client-name {
     display: flex;
     justify-content: flex-start;
@@ -303,15 +328,6 @@ h5 {
     resize: both;
 }
 
-/* #new-ask-form {
-    display: flex;
-    /* flex-direction: row;
-} */
-
-/* .form-group {
-    background-color: #eefcff;
-} */
-
 #new-ask-name {
     margin: 2px;
     background-color: #eefcff;
@@ -320,7 +336,7 @@ h5 {
 #new-task-title {
     width: 80%;
     resize: both;
-    background-color: #eefcff;
+    background-color: #a0ced9;
 }
 
 #new-task-name {
@@ -340,73 +356,51 @@ h5 {
     border-radius: 10px;
 }
 
-.btn {
-    border-radius: 10px;
-}
-
 .project-asks {
     margin: 8px;
 }
 
-#logout-btn-a {
-    text-decoration: none;
-    border: 1px solid black;
-    padding: 10px;
-    border-radius: 15px;
-    color: #355c7d;
-    font-weight: bold;
-    background-color: #a0ced9;
-}
-
-#logout-btn-a:hover {
-    opacity: 0.5;
-}
-
-.btn-primary {
-    background-color: #a0ced9;
-    color: #355c7d;
-    font-weight: bold;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
-.btn-primary:hover {
-    opacity: 0.5;
-    background-color: #809bce;
-    color: #355c7d;
-    font-weight: bold;
-    border-radius: 10px;
-    border: 1px solid black;
-}
-
-.comments {
-    background-color: #eefcff;
-}
-
-#comment-item-desc {
-    background-color: #eefcff;
-}
-
-ul {
-    background-color: #eefcff;
-}
-
-li {
-    background-color: #eefcff;
-}
-
-.contact-info {
-    background-color: #eefcff;
-}
-
-.account-name {
-    background-color: #eefcff;
-}
-
-.project-form-group {
-    background-color: #eefcff;
-}
-
+.comments,
+#comment-item-desc,
+.contact-info,
+.account-name,
+.project-form-group,
 .to-do-container {
     background-color: #eefcff;
+}
+
+
+
+
+
+/* ========================= Media Queries ============================== */
+
+/* Extra small devices (phones, 600px and down) */
+/* @media only screen and (max-width: 600px) {
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+} */
+
+
+
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */ 
+@media only screen and (max-width: 1200px) { 
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .project-main {
+        width: 100%;
+    }
+    .contact-info {
+        width: 100%;
+    }
+    .comment-main-container {
+        width: 80%;
+        text-align: center;
+    }
 }
