@@ -42,6 +42,7 @@ h3 {
 .project-ask-item {
     display: flex;
     flex-direction: row;
+    background-color: #eefcff;
 }
 
 
@@ -66,6 +67,7 @@ h3 {
     border: 1px solid gray;
     margin: 2rem;
     border-radius: 5px;
+    background-color: #eefcff;
 }
 
 .back-to-list {
@@ -103,6 +105,7 @@ h3 {
     border: 1px solid gray;
     margin: 2rem;
     border-radius: 5px;
+    background-color: #eefcff;
 }
 
 .project-main {
@@ -166,6 +169,7 @@ h5 {
     justify-content: flex-start;
     align-items: flex-start;
     flex-wrap: wrap;
+    background-color: #eefcff;
 }
 
 #project-title {
@@ -252,7 +256,8 @@ h5 {
 }
 
 .section-title {
-    margin: 1rem
+    margin: 1rem;
+    background-color: #eefcff;
 }
 
 .comment-title, .comment-form {
@@ -272,6 +277,7 @@ h5 {
     align-items: center;
     flex-wrap: wrap;
     padding: 5px;
+    background-color: #eefcff;
 }
 
 #client-phone {
@@ -280,6 +286,7 @@ h5 {
     align-items: center;
     flex-wrap: wrap;
     padding: 5px;
+    background-color: #eefcff;
 }
 
 #client-name {
@@ -288,6 +295,7 @@ h5 {
     align-items: center;
     flex-wrap: wrap;
     padding: 5px;
+    background-color: #eefcff;
 }
 
 #new-ask-title {
@@ -300,10 +308,9 @@ h5 {
     /* flex-direction: row;
 } */
 
-/* .form-group {
-    display: flex;
-    flex-direction: row;
-} */
+.form-group {
+    background-color: #eefcff;
+}
 
 #new-ask-name {
     margin: 2px;
@@ -351,4 +358,45 @@ h5 {
 
 #logout-btn-a:hover {
     opacity: 0.5;
+}
+
+.btn-primary {
+    background-color: #a0ced9;
+    color: #355c7d;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.btn-primary:hover {
+    opacity: 0.5;
+    background-color: #809bce;
+    color: #355c7d;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+
+.comments {
+    background-color: #eefcff;
+}
+
+#comment-item-desc {
+    background-color: #eefcff;
+}
+
+ul {
+    background-color: #eefcff;
+}
+
+li {
+    background-color: #eefcff;
+}
+
+.contact-info {
+    background-color: #eefcff;
+}
+
+.account-name {
+    background-color: #eefcff;
 }
