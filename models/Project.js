@@ -39,7 +39,8 @@ Project.init(
             references: {
                 model: 'user',
                 key: 'id',
-            }
+            },
+            onDelete: 'CASCADE'
         }
     },
     {
