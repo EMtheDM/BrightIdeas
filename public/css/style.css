@@ -100,9 +100,6 @@ h5 {
 }
 
 
-
-
-
 /* ======================== Login Page Elements ====================== */
 
 .main-login-container {
@@ -195,7 +192,7 @@ h5 {
     flex-direction: row;
     justify-content: space-between;
     border: 1px solid black;
-    border-radius: 5px;
+    /* border-radius: 10px; */
     background-color: #4f99b8;
 }
 
@@ -307,9 +304,6 @@ h5 {
     display: flex;
     border: solid 1px black;
     margin: 2rem;
-    /* justify-content: flex-start;
-    align-items: flex-end;
-    flex-wrap: wrap; */
 }
 
 #client-email,
@@ -370,25 +364,12 @@ h5 {
 }
 
 
-
-
-
 /* ========================= Media Queries ============================== */
-
-/* Extra small devices (phones, 600px and down) */
-/* @media only screen and (max-width: 600px) {
-    .main-container {
-        display: flex;
-        flex-direction: column;
-    }
-} */
-
-
-
-
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */ 
 @media only screen and (max-width: 1200px) { 
+
+    /* Project Page */
     .main-container {
         display: flex;
         flex-direction: column;
@@ -400,7 +381,121 @@ h5 {
         width: 100%;
     }
     .comment-main-container {
+        width: 93%;
+    }
+
+    #project-ask-desc,
+    #comment-item-desc,
+    #project-task-desc {
+        overflow-wrap: normal;
+    }
+
+    /* Profile Page */
+
+    .project-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        justify-content: space-evenly;
+    }
+
+}
+
+/* Large devices (laptops and desktops, 1000px and up) */ 
+@media only screen and (max-width: 1000px) {
+
+    /* Login Page */
+
+    .signup-form-grp,
+    .login-form-grp {
+        display: flex;
+        flex-direction: column;
+    }
+    
+
+    /* Profile Page */
+
+    .project-list {
+        display: flex;
+        flex-direction: column;
         width: 80%;
-        text-align: center;
+    }
+
+    #project-id {
+        width: 100%;
+    }
+
+    .container {
+        width: 80%;
+    }
+
+    .new-project-form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .project-title {
+        font-size: smaller;
+    }
+
+    .delete-btn {
+        position: relative;
+    }
+
+    #btn-bg {
+        border-radius: 15%;
+    }
+
+
+    /* Project Page */
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+    .project-main {
+        width: 100%;
+    }
+    .contact-info {
+        width: 100%;
+    }
+    .comment-main-container {
+        width: auto;
+    }
+} 
+
+/* Medium devices (laptops and desktops, 800px and up) */ 
+@media only screen and (max-width: 800px) {
+
+    /* Project Page */
+
+    .account-info {
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+/* Medium-Small devices (tablets, large phones, 750px and up */
+@media only screen and (max-width: 750px) {
+
+    /* Project Page */
+
+    .comment-main-container {
+        width: auto;
+    }
+}
+
+/* Small devices (phones, 600px and up) */ 
+@media only screen and (max-width: 600px) {
+
+    /* Project Page */
+
+    #client-email {
+        font-size: 1rem;
+    }
+
+    .comment-main-container {
+        width: auto;
     }
 }
