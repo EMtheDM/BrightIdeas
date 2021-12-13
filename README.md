@@ -3,7 +3,7 @@
 # Video Walkthrough
 
 ```
-https://user-images.githubusercontent.com/86095070/145760581-4b4ce985-6ded-4359-8c0c-aef4bf6408bb.mp4
+BrightIdeas\images\wireframes\Bright-Ideas.gif
 
 ```
 
