@@ -14,7 +14,7 @@
         {{#each projects as |project|}}
         <div class="row mb-2" id="project-id">
             <div class="col-md-8" id="project-title-container">
-                <p id="project-title"><a href="/project/{{project.id}}" id="project-link" class="blur-in">{{project.name}}</a></p>
+                <p id="project-title"><a class="vov fade-in-up" href="/project/{{project.id}}" id="project-link" class="blur-in">{{project.name}}</a></p>
             </div>
             <div class="col-md-4" id="btn-bg">
                 <button class="btn btn-sm btn-danger" id="delete-btn" data-id="{{project.id}}">🗑️</button>
@@ -58,5 +58,6 @@
     </div>  
 
 </div>
+
 
 <script src="./js/profile.js"></script>
