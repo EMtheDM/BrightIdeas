@@ -308,17 +308,19 @@ h5 {
     /* flex-direction: row;
 } */
 
-.form-group {
+/* .form-group {
     background-color: #eefcff;
-}
+} */
 
 #new-ask-name {
     margin: 2px;
+    background-color: #eefcff;
 }
 
 #new-task-title {
     width: 80%;
     resize: both;
+    background-color: #eefcff;
 }
 
 #new-task-name {
@@ -398,5 +400,13 @@ li {
 }
 
 .account-name {
+    background-color: #eefcff;
+}
+
+.project-form-group {
+    background-color: #eefcff;
+}
+
+.to-do-container {
     background-color: #eefcff;
 }
