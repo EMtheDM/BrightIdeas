@@ -43,8 +43,8 @@ WHEN I click on the link/app
 THEN I am taken to the login page
 WHEN I input all the asked for information and click on the sign-up button
 THEN I am taken to my user profile page
-WHEN I click on the add a project button
-THEN I can create a project 
+WHEN I fill in project information and click on the button to Create a projec
+THEN I see a project is created
 WHEN I create a project 
 THEN I am taken to the project page for that project
 WHEN I am in the project page
