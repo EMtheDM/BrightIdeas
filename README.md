@@ -3,8 +3,7 @@
 # Video Walkthrough
 
 ```
-[![Watch the video walk-through](https://watch.screencastify.com/v/SVuEDqdGYjpWOZkQxJg3)]
-
+<iframe src="https://drive.google.com/file/d/1BI30QrqM8q_IgK5xGGf6Ugrx31PjL3h_/preview" width="640" height="480"></iframe>
 
 ```
 
