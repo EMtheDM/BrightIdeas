@@ -60,4 +60,3 @@ document
     .addEventListener('click', delButtonHandler);
 
 
-const micron = require('webkul-micron');
