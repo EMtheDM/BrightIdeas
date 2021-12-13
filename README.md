@@ -3,7 +3,7 @@
 # Video Walkthrough
 
 ```
-BrightIdeas\images\wireframes\Bright-Ideas.gif
+[https://watch.screencastify.com/v/SVuEDqdGYjpWOZkQxJg3](url)
 
 ```
 
