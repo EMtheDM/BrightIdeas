@@ -1,7 +1,7 @@
 # Bright Ideas
 
 <a name="description"></a>
-
+<!--  Added description -->
 ## Description
 A simple and concise project management system where a user can create and manage their projects from start to finish. They can create a project including relevant information about their client, and within each project they can add items to the 'Project Asks' container, tasks to the 'Tasks' container, and also comments in the 'Activity Feed' container in order to keep track of all relavant activities. The user's profile page will keep all current projects within reach in the form of tiles with each project's respective name. The user can create projects from the form on the profile page as well as delete current projects via the trash can icon on each project tile. 
 
