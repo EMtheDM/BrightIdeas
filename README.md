@@ -16,7 +16,7 @@ A simple and concise project management system where a user can create and manag
 - [Usage](#usage)
 - [License](#license)
 - [Contributing](#contributing)
-- [Tests](#test)
+- [Tests](#tests)
 - [Questions](#questions)
 - [Video](#video)
 - [Screenshots](#screenshots)
@@ -69,6 +69,7 @@ THEN I can move it to the DONE: category
 git clone https://github.com/EMtheDM/BrightIdeas
 ```
 * Be sure that you are in the current working directory
+* Create a .env file. (See below in Usage for how to set up.)
 * Install the dependencies (bcrypt, connect-session-sequelize, express-handlebars, express, dotenv, mysql2, and sequelize) by opening the terminal and running
 ```
 npm install OR npm i
