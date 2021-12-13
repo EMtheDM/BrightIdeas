@@ -24,7 +24,8 @@ ProjectAsks.init(
       references: {
         model: 'project',
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   },
   {

@@ -25,7 +25,8 @@ Tasks.init(
       refereces: {
         model: 'project',
         key: 'id'
-      }
+      },
+      onDelete: 'CASCADE'
     }
   },
   {

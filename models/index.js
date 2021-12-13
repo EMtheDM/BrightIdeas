@@ -10,38 +10,50 @@ const Project = require('./Project');
 
 User.hasMany(Project, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Project.belongsTo(User, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Project.hasMany(Comment, {
     foreignKey: 'project_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Comment.belongsTo(Project, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE',
+    hooks: true
 })
 
 ProjectAsks.belongsTo(Project, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Project.hasMany(ProjectAsks, {
     foreignKey: 'project_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Tasks.belongsTo(Project, {
-    foreignKey: 'project_id'
+    foreignKey: 'project_id',
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 Project.hasMany(Tasks, {
     foreignKey: 'project_id',
-    onDelete: 'CASCADE'
+    onDelete: 'CASCADE',
+    hooks: true
 });
 
 
