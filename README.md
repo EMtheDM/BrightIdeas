@@ -3,13 +3,14 @@
 # Video Walkthrough
 
 ```
-
+https://user-images.githubusercontent.com/86095070/145760581-4b4ce985-6ded-4359-8c0c-aef4bf6408bb.mp4
 
 ```
 
 ## MVP
 
 ```
+As a simple and concise project management system we want to be able to create and manage new projects. After creating a simple login and sign up page/form we used GET/POST routes in the creation of the different projects with the info form we have on the profile/home page. After retrieving the data any time we click on a project we can then route that data to the correct column or task. We used new technology in the form of a CSS library that animates the text on our pages.
 
 ```
 ## Technologies Used
@@ -21,6 +22,7 @@ Sequelize
 GET and POST Routes
 API keys
 Cookies and Session
+New CSS Library
 
 ```
 ## Acceptance Criteria
@@ -49,7 +51,7 @@ THEN I can move it to the DONE: category
 # Deployed Links
 
 ```
-Github:
-Heroku:
+Github: https://github.com/EMtheDM/BrightIdeas
+Heroku: https://gentle-wildwood-55104.herokuapp.com/
 
 ```
