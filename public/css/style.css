@@ -132,7 +132,7 @@ h3 {
     text-align: center;
     margin: 0.5px;
     border-radius: 25px;
-    background-color: #9fb7c5;
+    background-color: #FFF5EB;
 }
 
 .project-list {
@@ -170,7 +170,7 @@ h5 {
 
 #project-title {
     font-size: 48px;
-    background-color: #9fb7c5;
+    background-color: #FFF5EB;
 }
 
 /* #project.title:hover {
@@ -182,16 +182,16 @@ h5 {
     height: 100%;
     width: 100%;
     text-decoration: none;
-    background-color: #9fb7c5;
+    background-color: #FFF5EB;
     color: #1F456E;
 }
 
 #project-title-container {
-    background-color: #9fb7c5;
+    background-color: #FFF5EB;
 }
 
 #btn-bg {
-    background-color: #9fb7c5;
+    background-color: #FFF5EB;
 }
 
 #create-project {
