@@ -25,7 +25,6 @@ router.post('/', withAuth, async (req, res) => {
     console.log('-----------------------', req.session.project_id, '------------------');
     const commentData = await Comment.create({
       ...req.body,
-      project_id: req.session.project_id,
     });
 
     res.status(200).json(commentData);

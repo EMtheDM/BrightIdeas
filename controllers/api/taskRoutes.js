@@ -11,7 +11,6 @@ router.post('/', withAuth, async (req, res) => {
         '---------------------');
         const newTask = await Tasks.create({
             ...req.body,
-            project_id: req.session.project_id,
         });
         console.log('------------',newTask.dataValues,'----------------');
         res.status(200).json(newTask.dataValues);

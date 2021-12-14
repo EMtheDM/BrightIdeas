@@ -27,7 +27,6 @@ router.post('/', withAuth, async (req, res) => {
     req.session.project_id);
     const askData = await ProjectAsks.create({
       ...req.body,
-      project_id: req.session.project_id,
     });
 
     res.status(200).json(askData.dataValues);
