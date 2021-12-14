@@ -43,9 +43,9 @@ WHEN I click on the link/app
 THEN I am taken to the login page
 WHEN I input all the asked for information and click on the sign-up button
 THEN I am taken to my user profile page
-WHEN I fill in project information and click on the button to Create a projec
+WHEN I fill in project information and click on the button to Create a project
 THEN I see a project is created
-WHEN I create a project 
+WHEN I click on the name of a project 
 THEN I am taken to the project page for that project
 WHEN I am in the project page
 THEN I can input all the asked for data 
@@ -184,7 +184,10 @@ Heroku Live Link: Heroku: https://gentle-wildwood-55104.herokuapp.com/
 <a name="credits"></a>
 
 ## Resources / Credits
-This project was authored by Eric Martin, Katlyn Boches, and Jon Jackson. 
+This project was authored by: 
+* Eric Martin - https://github.com/EMtheDM 
+* Katlyn Boches -  https://github.com/Katlyn627
+* Jon Jackson - https://github.com/jonteal
 
 Development of the project utilized npm dependencies: bcrypt, connect-session-sequelize, dotenv, express, express-handlebars, express-session, mysql2, nodemon, and sequelize.
 
