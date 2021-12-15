@@ -15,9 +15,7 @@ User.hasMany(Project, {
 });
 
 Project.belongsTo(User, {
-    foreignKey: 'project_id',
-    onDelete: 'CASCADE',
-    hooks: true
+    foreignKey: 'user_id'
 });
 
 Project.hasMany(Comment, {
@@ -27,15 +25,11 @@ Project.hasMany(Comment, {
 });
 
 Comment.belongsTo(Project, {
-    foreignKey: 'project_id',
-    onDelete: 'CASCADE',
-    hooks: true
+    foreignKey: 'project_id'
 })
 
 ProjectAsks.belongsTo(Project, {
-    foreignKey: 'project_id',
-    onDelete: 'CASCADE',
-    hooks: true
+    foreignKey: 'project_id'
 });
 
 Project.hasMany(ProjectAsks, {
@@ -45,9 +39,7 @@ Project.hasMany(ProjectAsks, {
 });
 
 Tasks.belongsTo(Project, {
-    foreignKey: 'project_id',
-    onDelete: 'CASCADE',
-    hooks: true
+    foreignKey: 'project_id'
 });
 
 Project.hasMany(Tasks, {
