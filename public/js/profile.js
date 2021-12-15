@@ -44,7 +44,7 @@ const delButtonHandler = async (event) => {
             document.location.replace('/profile');
         // } else {
         //     alert('Failed to delete project');
-        // }
+        }
     }
 };
 
@@ -58,5 +58,3 @@ document
 document
     .querySelector('.project-list')
     .addEventListener('click', delButtonHandler);
-
-
